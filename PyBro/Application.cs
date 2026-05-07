@@ -1,7 +1,7 @@
 namespace PyBro {
     public class Application {
         private bool _isRunning = true;
-        Application() {}
+        public Application() {}
 
         public void RunMainLoop()
         {
