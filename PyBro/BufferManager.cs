@@ -2,20 +2,20 @@ using System.Collections.Generic;
 
 namespace PyBro
 {
-    class CodeManager : ICodeManager
+    class BufferManager : IBufferManager
     {
-        Stack<IBufferChangeEvent> stack = null;
+        Stack<IBufferChangeEvent> buffer = null;
 
-        public CodeManager() {
-            stack = new Stack<IBufferChangeEvent>();
+        public BufferManager() {
+            buffer = new Stack<IBufferChangeEvent>();
         }
 
         public override void PushBufferChangeEvent(IBufferChangeEvent e) {
-            stack.Push(e);
+            buffer.Push(e);
         }
         
         public override IBufferChangeEvent PopBufferChangeEvent() {
-            return stack.Pop();
+            return buffer.Pop();
         }
 
         public override void ProcessBufferChangeEvent(IBufferChangeEvent e) {
