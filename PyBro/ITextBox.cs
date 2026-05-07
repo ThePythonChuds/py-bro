@@ -19,5 +19,11 @@ namespace PyBro
         /// <param name="start">Start position</param>
         /// <param name="end"></param>
 		public void RemoveString(Coords start, Coords end);
+
+        /// <summary>
+        /// Updates the coords of the caret
+        /// </summary>
+        /// <param name="e">The event that contains information. </param>
+        public void UpdateCaret(IKeyboardMouseEvent e);
 	}
 }
