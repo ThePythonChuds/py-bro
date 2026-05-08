@@ -1,6 +1,6 @@
 namespace PyBro
 {
-    class PythonException : System.Exception
+    public class PythonException : System.Exception
     {
         
     }

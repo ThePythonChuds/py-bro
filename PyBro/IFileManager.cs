@@ -5,34 +5,31 @@ namespace PyBro {
         /// Creates an empty file  
         /// </summary>
         /// <param name="path">Path of the file to be created</param>
-        //  TODO: alege ce exceptii sa arunce metodele din fisierul asta si termina de comentat fisierul. nu uita sa stergi comentariul /// <exception cref="ArgumentNullException"> 
+        /// <exception>
         /// Thrown when name is null.
         /// </exception>
-        public void CreateFile(String path);
+        public void CreateFile(string path);
 
         /// <summary>
-        /// Creates a file with contents of a buffer.   
+        /// This method creates the file if a file does not exist at that path, and tries to overwrite the buffer to the file if it exists already. 
         /// </summary>
         /// <param name="path">Path of the file to be created</param>
         /// <param name="buffer">Content of the file</param>
-        public void CreateFile(String path, IBuffer buffer);
-        
-        /// <summary>
-        /// Creates an empty file  
-        /// </summary>
-        /// <param name="path">Path of the file to be created</param>
-        public void RemoveFile(String path);
-        
-        /// <summary>
-        /// Creates an empty file  
-        /// </summary>
-        /// <param name="path">Path of the file to be created</param>
-        public void SaveFile();
+        /// <exception cref="FileException">If file creation failed.</exception>
+        public void SaveBuffer(string path, string buffer);
 
         /// <summary>
-        /// Creates an empty file  
+        /// Requests OS for removing a file.
         /// </summary>
-        /// <param name="path">Path of the file to be created</param>
-        public string LoadFile();
+        /// <param name="path">Path of the file to be removed</param>
+        /// <exception cref="FileException">If the path does not point to a file.</exception>
+        public void RemoveFile(string path);
+
+        /// <summary>
+        /// Loads file content into a string.  
+        /// </summary>
+        /// <param name="path">Path of the file to be read</param>
+        /// <returns>The content of the file.</returns>
+        public string GetFileContent(string path);
     }
 }
