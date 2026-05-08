@@ -8,7 +8,7 @@ dotnet add package IronPython
 
 # Notes
 Nu uita meniu help
-module: UI, CORE, TESTS
+module: UI, CORE, TESTS	
 MODREANU FA 20 UNIT TESTE TE ROG!! si documentatia.
 
 # Links
