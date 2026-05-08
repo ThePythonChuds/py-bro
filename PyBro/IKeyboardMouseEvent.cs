@@ -1,7 +1,7 @@
 namespace PyBro{
     public interface IKeyboardMouseEvent {
         public EventType EType {get; private set;} // Event type (e.g. keyboard, mouse)
-        public Coords CaretPosition; 
+        public Coords CaretPosition {get; private set;} 
         public int KeyCode {get; private set;} // What key is pressed
     }
 
