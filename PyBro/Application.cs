@@ -1,24 +1,31 @@
 namespace PyBro {
     public class Application {
-        private IPythonInterpretor _pythonInterpretor;
-        private IUi _ui;
-        private IFileManager _fileManager;
-        private IBufferManager _bufferManager;
+
+        private Model _model;
+
+        private View _view;
+
+        private Controller _controller;
+
         private bool _isRunning;
+
         public Application()
         {
             _isRunning = true;
 
-            // daca nu compileaza, inseamna ca nu sunt definite clasele care implementeaza
-            _pythonInterpretor = new PythonInterpretor();
-            _ui = new Ui();
-            _fileManager = new FileManager();
-            _bufferManager = new BufferManager();
+            // Initializare componente MVC
+            _model      = new Model();
+            _view       = new View();
+            _controller = new Controller(_model, _view);
+
         }
 
         public void RunMainLoop()
         {
-            while(_isRunning) {}
+            while(_isRunning) {
+                _controller.Tick();
+                // Filip: Optional, putem sa adaugam delay aici dar nu cred ca e cazul
+            }
         }
     }
 }
