@@ -1,5 +1,11 @@
 # py-bro
 
+# Installation guide
+Add needed dependencies by executing
+```bash
+dotnet add package IronPython
+```
+
 # Impartire cerinte
 TUDOR Ui TreeDir
 
@@ -12,6 +18,8 @@ STEFAN FileManager, Unit Testing (minim 20 testew), Documentatia (AI SPECIFICATI
 
 Nu uita meniu help
 module: UI, CORE, TESTS
+
+
 
 # Links
 Diagrama MVC: https://i.sstatic.net/eSe7V.png
