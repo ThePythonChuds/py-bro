@@ -5,7 +5,8 @@ namespace PyBro {
 
         public View()
         {
-            
+            _ui = new Ui();
+            _treeDir = new TreeDir();
         }
 
         /// <summary>

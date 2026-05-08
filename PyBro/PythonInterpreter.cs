@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
 
@@ -9,7 +10,7 @@ namespace PyBro
     /// </summary>
     public class PythonInterpreter : IPythonInterpreter
     {
-        private ScriptEngine _scriptEngine = null;
+        private ScriptEngine _scriptEngine;
 
 
         public PythonInterpreter()
@@ -34,8 +35,8 @@ namespace PyBro
                 using var stdout = new MemoryStream();
                 using var stderr = new MemoryStream();
 
-                engine.Runtime.IO.SetOutput(stdout, Encoding.UTF8);
-                engine.Runtime.IO.SetErrorOutput(stderr, Encoding.UTF8);
+                _scriptEngine.Runtime.IO.SetOutput(stdout, Encoding.UTF8);
+                _scriptEngine.Runtime.IO.SetErrorOutput(stderr, Encoding.UTF8);
 
                 _scriptEngine.Execute(script, scope);
 
@@ -51,7 +52,7 @@ namespace PyBro
                 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 // !!!: Filip: DACA VEZI ASTA, AMINTESTE-I LUI BELIGAN CA TREBUIE SA AFISAM SI O EROARE PT USER IN CAZ CA SCRIPTUL PYTHON NU POATE RULA! MERCI!
 
-                Console.WriteLine("Error: PythonInterpreter.RunScript()");
+                System.Console.WriteLine("Error: PythonInterpreter.RunScript()");
                 throw new PythonException();
             }
         }

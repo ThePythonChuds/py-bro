@@ -2,7 +2,7 @@ using System.IO;
 
 namespace PyBro
 {
-    public class FileManager
+    public class FileManager : IFileManager
     {
 
         /// <summary>
@@ -19,7 +19,7 @@ namespace PyBro
                 File.Create(path).Dispose();
             } catch (Exception e)
             {
-                Console.WriteLine("Error: FileManager.CreateFile()");
+                System.Console.WriteLine("Error: FileManager.CreateFile()");
                 throw new FileException();
             }
         }
@@ -36,14 +36,14 @@ namespace PyBro
         {
             try
             {
-                var dir = path.GetDirectoryName(fullPath);
+                var dir = Path.GetDirectoryName(path);
 
                 this.EnsureDirectoryExists(dir);
 
                 File.WriteAllText(path, buffer);
             } catch (Exception e)
             {
-                Console.WriteLine("Error: FileManager.SaveBuffer()")
+                System.Console.WriteLine("Error: FileManager.SaveBuffer()");
                 throw new FileException();
             }
         }
@@ -62,7 +62,7 @@ namespace PyBro
                 File.Delete(path);
             } catch (Exception e)
             {
-                Console.WriteLine("Error: FileManager.RemoveFile(): File " + path + "not found!");
+                System.Console.WriteLine("Error: FileManager.RemoveFile(): File " + path + "not found!");
                 throw new FileException();
             }
         }
@@ -79,7 +79,7 @@ namespace PyBro
                 return File.ReadAllText(path);
             } catch (Exception e)
             {
-                Console.WriteLine("Error: FileManager.GetFileContent()");
+                System.Console.WriteLine("Error: FileManager.GetFileContent()");
                 throw new FileException();
             }
         }
@@ -87,12 +87,12 @@ namespace PyBro
         /// <summary>
         /// This method creates a directory at a certain path. If the directory already exists, it does nothing.
         /// </summary>
-        /// <param name="dir">Path of the directory.</param>
-        private void EnsureDirectoryExists(string dir)
+        /// <param name="dirPath">Path of the directory.</param>
+        private void EnsureDirectoryExists(string dirPath)
         {
-            if (!Directory.Exists(path))
+            if (!Directory.Exists(dirPath))
             {
-                Directory.CreateDirectory(path);
+                Directory.CreateDirectory(dirPath);
             }
         }
     }
