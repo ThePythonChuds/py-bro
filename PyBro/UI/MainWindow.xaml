@@ -4,6 +4,16 @@
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         Title="PyBro IDE - Test Version" Height="600" Width="900"
         Background="#1e1e1e">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="EditorBg" Color="#1E1E1E"/>
+        <SolidColorBrush x:Key="ToolbarBg" Color="#2D2D2D"/>
+        <SolidColorBrush x:Key="AccentColor" Color="#007ACC"/>
+        <SolidColorBrush x:Key="MainText" Color="#D4D4D4"/>
+        <SolidColorBrush x:Key="ButtonBg" Color="#858ae3"/>
+    </Window.Resources>
+
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
