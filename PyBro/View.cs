@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 namespace PyBro {
     public class View {
         private IUi _ui;
@@ -29,6 +31,10 @@ namespace PyBro {
 
         public class TickInfo
         {
+
+            public bool ShouldExit { get; set; }
+            public bool ShouldRunScript { get; set; }
+            public string ScriptToRun { get; set; } = "";
             public TickInfo()
             {
                 

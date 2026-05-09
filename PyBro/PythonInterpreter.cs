@@ -28,6 +28,7 @@ namespace PyBro
         {
             // Filip: Orice exceptie prinsa este cel mai probabilo eroare in scriptul python pe care il rulam.
             // F: Poate sa fie si o eroare interna IronPython, dar cred ca sansele sunt mici. Nu uita sa bei apa!
+            // A: grija mare la indentarea la codul python e grava acolo
             try
             {
                 var scope = _scriptEngine.CreateScope();
@@ -53,7 +54,8 @@ namespace PyBro
                 // !!!: Filip: DACA VEZI ASTA, AMINTESTE-I LUI BELIGAN CA TREBUIE SA AFISAM SI O EROARE PT USER IN CAZ CA SCRIPTUL PYTHON NU POATE RULA! MERCI!
 
                 System.Console.WriteLine("Error: PythonInterpreter.RunScript()");
-                throw new PythonException();
+                //throw new PythonException("Error running Python script", e);
+                return (string.Empty, e.Message);
             }
         }
     }
