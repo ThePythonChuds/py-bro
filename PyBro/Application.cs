@@ -23,7 +23,7 @@ namespace PyBro {
         public void RunMainLoop()
         {
             while(_isRunning) {
-                _controller.Tick();
+                _isRunning = _controller.Tick();
                 // Filip: Optional, putem sa adaugam delay aici dar nu cred ca e cazul
             }
         }

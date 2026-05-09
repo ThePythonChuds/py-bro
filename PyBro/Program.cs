@@ -5,11 +5,8 @@ class Program
 {
     public static void Main(string[] args)
     {
-        //new PyBro.Application().RunMainLoop();
-
-
         // Testare python interpreter (merge momentan)
-        IPythonInterpreter interpreter = new PythonInterpreter();
+        /*IPythonInterpreter interpreter = new PythonInterpreter();
 
         string script = @"
 x = 5
@@ -22,6 +19,9 @@ print(x * y)
         System.Console.WriteLine(result.Item1);
 
         System.Console.WriteLine("STDERR:");
-        System.Console.WriteLine(result.Item2);
+        System.Console.WriteLine(result.Item2);*/
+        
+        
+        new PyBro.Application().RunMainLoop();
     }
 }

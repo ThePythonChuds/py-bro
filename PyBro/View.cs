@@ -17,7 +17,17 @@ namespace PyBro {
         /// <param name="modelInfo"></param>
         public void Show(Model.TickInfo modelInfo)
         {
-            
+            if (!string.IsNullOrWhiteSpace(modelInfo.OutputToConsole))
+            {
+                System.Console.WriteLine("STDOUT:");
+                System.Console.WriteLine(modelInfo.OutputToConsole);
+            }
+
+            if (!string.IsNullOrWhiteSpace(modelInfo.ErroredToConsole))
+            {
+                System.Console.WriteLine("STDERR:");
+                System.Console.WriteLine(modelInfo.ErroredToConsole);
+            }
         }
 
         /// <summary>
@@ -26,7 +36,20 @@ namespace PyBro {
         /// <returns></returns>
         public View.TickInfo PackViewTickInfo()
         {
-            return new View.TickInfo();
+            string? input = System.Console.ReadLine();
+            if (input == null || input.Trim().ToUpper() == "EXIT")
+            {
+                return new View.TickInfo
+                {
+                    ShouldExit = true
+                };
+            }
+            return new View.TickInfo()
+            {
+                ShouldRunScript = true,
+                ScriptToRun = input
+            };
+            
         }
 
         public class TickInfo

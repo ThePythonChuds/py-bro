@@ -16,11 +16,13 @@ namespace PyBro {
 
         }
 
-        public void Tick()
+        public bool Tick()
         {
             var viewTickInfo = _view.PackViewTickInfo();
             var modelTickInfo = _model.ApplyTickInfo(viewTickInfo);
             _view.Show(modelTickInfo);
+
+            return !modelTickInfo.ShouldExit;
         }
     }
 }
