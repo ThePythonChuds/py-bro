@@ -20,7 +20,6 @@ namespace PyBro.UI
 
         private void btnRun_Click(object sender, RoutedEventArgs e)
         {
-            // Așa citești tot textul din editor
             string codulMeu = txtEditor.Text;
             string highlightText = txtEditor.SelectedText;
             if (string.IsNullOrWhiteSpace(codulMeu))
@@ -29,8 +28,6 @@ namespace PyBro.UI
                 return;
             }
 
-            // Aici îl trimiți către logica ta de execuție
-            // Exemplu: interpretor.Execute(codulMeu);
             txtConsole.AppendText(highlightText);
             txtConsole.AppendText($"\n[RUN]: Se execută {codulMeu} caractere...");
         }
