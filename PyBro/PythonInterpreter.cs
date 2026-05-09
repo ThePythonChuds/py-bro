@@ -12,11 +12,12 @@ namespace PyBro
     public class PythonInterpreter : IPythonInterpreter
     {
         private ScriptEngine _scriptEngine;
-
+        private ScriptScope _scriptScope;
 
         public PythonInterpreter()
         {
             _scriptEngine = Python.CreateEngine();
+            _scriptScope = _scriptEngine.CreateScope();
         }
 
         /// <summary>
@@ -29,18 +30,15 @@ namespace PyBro
         {
             // Filip: Orice exceptie prinsa este cel mai probabilo eroare in scriptul python pe care il rulam.
             // F: Poate sa fie si o eroare interna IronPython, dar cred ca sansele sunt mici. Nu uita sa bei apa!
-            // A: grija mare la indentarea la codul python e grava acolo
             try
             {
-                var scope = _scriptEngine.CreateScope();
-
                 using var stdout = new MemoryStream();
                 using var stderr = new MemoryStream();
 
                 _scriptEngine.Runtime.IO.SetOutput(stdout, Encoding.UTF8);
                 _scriptEngine.Runtime.IO.SetErrorOutput(stderr, Encoding.UTF8);
 
-                _scriptEngine.Execute(script, scope);
+                _scriptEngine.Execute(script, _scriptScope);
 
                 stdout.Position = 0;
                 stderr.Position = 0;
