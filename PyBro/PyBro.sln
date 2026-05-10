@@ -4,6 +4,8 @@ VisualStudioVersion = 18.5.11723.231
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PyBro", "PyBro.csproj", "{F98AC7D0-B0DB-B4BB-6C86-32221DB791D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PyBro.Tests", "..\PyBro.Tests\PyBro.Tests.csproj", "{82DD4F60-3CFB-4168-8E24-2A447E1BFA6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{F98AC7D0-B0DB-B4BB-6C86-32221DB791D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F98AC7D0-B0DB-B4BB-6C86-32221DB791D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F98AC7D0-B0DB-B4BB-6C86-32221DB791D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82DD4F60-3CFB-4168-8E24-2A447E1BFA6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DD4F60-3CFB-4168-8E24-2A447E1BFA6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82DD4F60-3CFB-4168-8E24-2A447E1BFA6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82DD4F60-3CFB-4168-8E24-2A447E1BFA6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
