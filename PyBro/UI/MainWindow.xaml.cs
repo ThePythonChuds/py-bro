@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static IronPython.Modules._ast;
+using System.Windows.Media.Animation;
 
 namespace PyBro.UI
 {
@@ -23,6 +24,7 @@ namespace PyBro.UI
         public MainWindow()
         {
             InitializeComponent();
+            LoadFolder(@"C:\Users\tudor\Desktop\testing");
         }
 
         private void btnRun_Click(object sender, RoutedEventArgs e)
@@ -70,7 +72,7 @@ namespace PyBro.UI
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
-            bool ? result = fileDialog.ShowDialog();
+            bool? result = fileDialog.ShowDialog();
             FileManager fileManager = new FileManager();
 
 
@@ -97,8 +99,8 @@ namespace PyBro.UI
                     txtConsole.AppendText($"\n[CRITICAL] Eroare neașteptată: {ex.Message}");
                 }
             }
-          txtEditor.Focus();
-          txtEditor.CaretIndex = txtEditor.Text.Length;
+            txtEditor.Focus();
+            txtEditor.CaretIndex = txtEditor.Text.Length;
 
         }
 
@@ -115,7 +117,7 @@ namespace PyBro.UI
                 path = _currentFilePath;
             else
             {
-                
+
                 bool? result = saveFileDialog.ShowDialog();
                 if (result == true)
                 {
@@ -131,11 +133,67 @@ namespace PyBro.UI
                 txtConsole.AppendText("\n[INFO] Salvare reușită.");
             }
             catch (Exception ex)
+
             {
                 MessageBox.Show("Eroare la salvare: " + ex.Message);
             }
+           
+
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+            {
+                if (WindowState == WindowState.Normal)
+                    WindowState = WindowState.Maximized;
+                else
+                    WindowState = WindowState.Normal;
+               
+            }
+
+            if(e.LeftButton == MouseButtonState.Pressed) 
+            {
+                DragMove();
+            }
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
 
 
+        private void LoadFolder(string path)
+        {
+            if (Directory.Exists(path))
+            {
+                var root = TreeDir.BuildFileTree(path);
+                fileExplorer.ItemsSource = root;
+            }
+        }
+        private void fileExplorer_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            var selectedItem = e.NewValue as FileItem;
+            if (selectedItem != null && !selectedItem.IsDirectory)
+            {
+                try
+                {
+                    FileManager fm = new FileManager();
+                    txtEditor.Text = fm.GetFileContent(selectedItem.Path);
+                    _currentFilePath = selectedItem.Path;
+                    this.Title = $"PyBro - {selectedItem.Name}";
+                }
+                catch (Exception ex)
+                {
+                    txtConsole.AppendText("\n[ERROR] " + ex.Message);
+                }
+            }
         }
     }
 }
