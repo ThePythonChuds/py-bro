@@ -59,10 +59,16 @@ namespace PyBro
         {
             try
             {
+                if (!File.Exists(path))
+                    throw new FileException();
                 File.Delete(path);
-            } catch (Exception e)
+            }
+            catch (FileException)
             {
-                System.Console.WriteLine("Error: FileManager.RemoveFile(): File " + path + "not found!");
+                throw;
+            }
+            catch (Exception e)
+            {
                 throw new FileException();
             }
         }
