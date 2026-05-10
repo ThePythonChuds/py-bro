@@ -94,12 +94,11 @@ namespace PyBro.UI
                 }
                 catch (Exception ex)
                 {
-                    // Aceasta este o plasă de siguranță extra pentru erori neprevăzute
                     txtConsole.AppendText($"\n[CRITICAL] Eroare neașteptată: {ex.Message}");
                 }
             }
           txtEditor.Focus();
-txtEditor.CaretIndex = txtEditor.Text.Length;
+          txtEditor.CaretIndex = txtEditor.Text.Length;
 
         }
 
