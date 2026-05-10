@@ -34,18 +34,26 @@
                 </StackPanel>
             </Button>
             
-            <Button Name="btnSave" Margin="5" Width="35" Height="30" Background="{StaticResource ButtonBg}" Foreground="White">
+            <Button Name="btnSave" Margin="5" Width="35" Height="30" Background="{StaticResource ButtonBg}" Foreground="White" Click="btnSave_Click">
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconMaterial Kind="ContentSave" Width="15" Height="15" VerticalAlignment="Center" Margin="0,0,0,0"/>
                     
                 </StackPanel>
             </Button>
+            
+                      <Button Name="btnLoad" Margin="5" Width="35" Height="30" Background="{StaticResource ButtonBg}" Foreground="White" Click="btnLoad_Click">
+              <StackPanel Orientation="Horizontal">
+                  <iconPacks:PackIconMaterial Kind="Upload" Width="15" Height="15" VerticalAlignment="Center" Margin="0,0,0,0"/>
+              </StackPanel>
+          </Button>
 
             <Button Name="btnHelp" Margin="5" Width="35" Height="30" Background="{StaticResource ButtonBg}" Foreground="White">
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconMaterial Kind="Helicopter" Width="15" Height="15" VerticalAlignment="Center" Margin="0,0,0,0"/>
                 </StackPanel>
             </Button>
+
+  
 
         </StackPanel>
 

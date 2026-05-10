@@ -3,6 +3,7 @@
 
 class Program
 {
+    [System.STAThreadAttribute]
     public static void Main(string[] args)
     {
         // Testare python interpreter (merge momentan)
@@ -20,8 +21,9 @@ print(x * y)
 
         System.Console.WriteLine("STDERR:");
         System.Console.WriteLine(result.Item2);*/
-        
-        
+
+
         new PyBro.Application().RunMainLoop();
+
     }
 }
