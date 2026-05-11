@@ -7,6 +7,8 @@ namespace PyBro {
 
         private IFileManager _fileManager;
 
+        private TextBuffer _textBuffer = new TextBuffer("");
+
         public Model()
         {
             _pythonInterpreter = new PythonInterpreter();
@@ -23,21 +25,24 @@ namespace PyBro {
         public Model.TickInfo ApplyTickInfo(View.TickInfo tickInfo)
         {
             var result = new Model.TickInfo();
+            this._textBuffer = new TextBuffer(tickInfo.TextBuffer);
+            ApplyAutoIndent();
 
-            if (tickInfo.ShouldExit)
-            {
-                result.ShouldExit = true;
-                return result;
-            }
 
-            if(tickInfo.ShouldRunScript)
-            {
-                var scriptResult = _pythonInterpreter.RunScript(tickInfo.ScriptToRun);
-
-                result.OutputToConsole = scriptResult.Item1;
-                result.ErroredToConsole = scriptResult.Item2;
-            }
             return result; 
+        }
+
+        private void ApplyAutoIndent()
+        {
+            TextBuffer.IndentLevel = 0;
+            foreach (var line in _textBuffer.Lines)
+            {
+                if (line.Contains(":"))
+                {
+                    TextBuffer.IndentLevel++;
+                }
+            }
+            _textBuffer.Lines.Last().Insert(0, new string(TextBuffer.IndentString[0], (int)TextBuffer.IndentLevel * TextBuffer.IndentString.Length));
         }
 
         public class TickInfo

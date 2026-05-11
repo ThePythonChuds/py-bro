@@ -27,6 +27,11 @@ namespace PyBro.UI
             LoadFolder(@"C:\Users\tudor\Desktop\testing");
         }
 
+        public string GetBuffer()
+        {
+            return txtEditor.Text;
+        }
+
         private void btnRun_Click(object sender, RoutedEventArgs e)
         {
             FileManager fileManager = new FileManager();

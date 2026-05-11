@@ -1,9 +1,11 @@
+using PyBro.UI;
 using System.Security.Cryptography.X509Certificates;
 
 namespace PyBro {
     public class View {
         private IUi _ui;
         private ITreeDir _treeDir;
+        
 
         public View()
         {
@@ -36,31 +38,18 @@ namespace PyBro {
         /// <returns></returns>
         public View.TickInfo PackViewTickInfo()
         {
-            string? input = System.Console.ReadLine();
-            if (input == null || input.Trim().ToUpper() == "EXIT")
-            {
-                return new View.TickInfo
-                {
-                    ShouldExit = true
-                };
-            }
-            return new View.TickInfo()
-            {
-                ShouldRunScript = true,
-                ScriptToRun = input
-            };
+
+            return new View.TickInfo(_ui.GetBuffer());
             
         }
 
         public class TickInfo
         {
-
-            public bool ShouldExit { get; set; }
-            public bool ShouldRunScript { get; set; }
-            public string ScriptToRun { get; set; } = "";
-            public TickInfo()
+            public string TextBuffer { get; private set; }
+            
+            public TickInfo(string buffer)
             {
-                
+                TextBuffer = buffer;
             }
         }
     }
