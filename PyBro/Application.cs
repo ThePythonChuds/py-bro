@@ -21,9 +21,16 @@ namespace PyBro {
         }
 
         [System.STAThreadAttribute]
-        public void RunMainLoop()
+        public void Run()
         {
             var app = new System.Windows.Application();
+
+            this.HookControllerTick();
+
+            app.Run(new PyBro.UI.MainWindow());
+        }
+
+        private void HookControllerTick() {
 
             var timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMiliseconds(16);
@@ -33,10 +40,9 @@ namespace PyBro {
                 if (!_isRunning) {
                     app.Shutdown();
                 }
-            }
-            timer.Start();
+            };
 
-            app.Run(new PyBro.UI.MainWindow());
+            timer.Start();
         }
     }
 }
