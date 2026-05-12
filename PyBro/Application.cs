@@ -24,12 +24,19 @@ namespace PyBro {
         public void RunMainLoop()
         {
             var app = new System.Windows.Application();
-            app.Run(new PyBro.UI.MainWindow());
-            while (_isRunning) {
-                _isRunning = _controller.Tick();
 
-                // Filip: Optional, putem sa adaugam delay aici dar nu cred ca e cazul
+            var timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMiliseconds(16);
+
+            timer.Tick += (_, _) => {
+                _isRunning = _controller.Tick();
+                if (!_isRunning) {
+                    app.Shutdown();
+                }
             }
+            timer.Start();
+
+            app.Run(new PyBro.UI.MainWindow());
         }
     }
 }
