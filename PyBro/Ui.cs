@@ -1,15 +1,19 @@
 using PyBro.UI;
 using System;
+using System.Windows;
+using System.Windows.Threading;
+
 namespace PyBro
 {
     public class Ui : IUi
     {
-        private MainWindow? MainWindow
+        private MainWindow? _mainWindow = null; // NOTE: NU TE ATINGE NICIODATA DE ASTA!!!!!!!
+        private MainWindow MainWindow
         {
             get {
                 if (_mainWindow == null)
                 {
-                    _mainWindow = (MainWindow)Application.Current.MainWindow;
+                    _mainWindow = (MainWindow)System.Windows.Application.Current.MainWindow;
                 }
                 return _mainWindow;
             }
@@ -17,7 +21,6 @@ namespace PyBro
 
         public Ui()
         {
-            this.MainWindow = null;
         }
 
         public string GetBuffer()

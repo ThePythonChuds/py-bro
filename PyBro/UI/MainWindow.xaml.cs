@@ -73,6 +73,12 @@ namespace PyBro.UI
             }
             fileManager.SaveBuffer(path, runScript);
         }
+        private void btnLoadPath_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            bool? result = fileDialog.ShowDialog(); // TODO: Path dir
+            FileManager fileManager = new FileManager();
+        }
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {

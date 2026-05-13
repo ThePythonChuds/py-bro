@@ -101,6 +101,9 @@
                 <Button Name="btnHelp" Margin="5" Width="35" Height="30" Background="{StaticResource ButtonBg}" Foreground="White" >
                     <iconPacks:PackIconMaterial Kind="Helicopter" Width="15" Height="15" Spin="True"/>
                 </Button>
+                <Button Name="btnLoadPath" Margin="5" Width="35" Height="30" Background="{StaticResource ButtonBg}" Foreground="White" Click="btnLoadPath_Click">
+                    <iconPacks:PackIconMaterial Kind="Folder" Width="15" Height="15"/>
+                </Button>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
@@ -131,6 +134,7 @@
           Background="#252526" 
           Foreground="White" 
           BorderThickness="0">
+            
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Children}">
                     <StackPanel Orientation="Horizontal">
