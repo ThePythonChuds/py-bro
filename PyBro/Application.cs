@@ -26,8 +26,6 @@ namespace PyBro {
             _model      = new Model();
             _view       = new View();
             _controller = new Controller(_model, _view);
-            _app = new System.Windows.Application();
-
         }
 
 
