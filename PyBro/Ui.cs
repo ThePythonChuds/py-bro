@@ -22,7 +22,6 @@ namespace PyBro
 
         public string GetBuffer()
         {
-
             return this.MainWindow.GetBuffer();
         }
 

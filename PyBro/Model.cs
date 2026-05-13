@@ -3,7 +3,6 @@ namespace PyBro {
 
         private IPythonInterpreter _pythonInterpreter;
 
-        private IConsole _console;
 
         private IFileManager _fileManager;
 
@@ -12,7 +11,6 @@ namespace PyBro {
         public Model()
         {
             _pythonInterpreter = new PythonInterpreter();
-            _console = new Console();
             _fileManager = new FileManager();
         }
 
