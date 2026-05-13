@@ -1,6 +1,8 @@
 namespace PyBro {
     public class Application {
 
+        private System.Windows.Application _app;
+
         private Model _model;
 
         private View _view;
@@ -11,6 +13,9 @@ namespace PyBro {
 
         public Application()
         {
+            // NOTE: _app trebuie sa fie initializat inaintea celorlalte componente MVC
+            _app = new System.Windows.Application();
+            
             _isRunning = true;
 
             // Initializare componente MVC
@@ -20,20 +25,19 @@ namespace PyBro {
 
         }
 
+
         [System.STAThreadAttribute]
         public void Run()
         {
-            var app = new System.Windows.Application();
-
             this.HookControllerTick();
 
-            app.Run(new PyBro.UI.MainWindow());
+            _app.Run(new PyBro.UI.MainWindow());
         }
 
         private void HookControllerTick() {
 
             var timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMiliseconds(16);
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 16); // NOTE: Tickurile de update se aplica la intervale de 16ms
 
             timer.Tick += (_, _) => {
                 _isRunning = _controller.Tick();
