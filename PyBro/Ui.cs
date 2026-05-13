@@ -7,10 +7,10 @@ namespace PyBro
         private MainWindow _mainWindow;
         public Ui()
         {
-            System.Windows.Application.Current.Dispatcher.Invoke(() =>
-            {
+            //System.Windows.Application.Current.Dispatcher.Invoke(() =>
+            //{
                 _mainWindow = (MainWindow)System.Windows.Application.Current.MainWindow;
-            });
+            //});
         }
 
         public string GetBuffer()

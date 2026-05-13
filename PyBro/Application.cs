@@ -1,4 +1,7 @@
+using System;
+using System.Windows.Threading;
 namespace PyBro {
+
     public class Application {
 
         private Model _model;
@@ -9,6 +12,9 @@ namespace PyBro {
 
         private bool _isRunning;
 
+
+        private System.Windows.Application _app;
+
         public Application()
         {
             _isRunning = true;
@@ -17,28 +23,28 @@ namespace PyBro {
             _model      = new Model();
             _view       = new View();
             _controller = new Controller(_model, _view);
+            _app = new System.Windows.Application();
 
         }
 
         [System.STAThreadAttribute]
         public void Run()
         {
-            var app = new System.Windows.Application();
 
             this.HookControllerTick();
 
-            app.Run(new PyBro.UI.MainWindow());
+            _app.Run(new PyBro.UI.MainWindow());
         }
 
         private void HookControllerTick() {
 
             var timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMiliseconds(16);
+            timer.Interval = new TimeSpan(0,0,0,0,16);
 
             timer.Tick += (_, _) => {
                 _isRunning = _controller.Tick();
                 if (!_isRunning) {
-                    app.Shutdown();
+                    _app.Shutdown();
                 }
             };
 
