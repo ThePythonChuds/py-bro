@@ -81,13 +81,13 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="5"/>
             <RowDefinition Height="150"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Column="1" Background="{StaticResource ToolbarBg}" Margin="5" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        <Grid Grid.Column="1" Background="{StaticResource ToolbarBg}" Margin="10" MouseLeftButtonDown="Window_MouseLeftButtonDown">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                 <Button Name="btnRun" Margin="5" Width="35" Height="30" Background="{StaticResource ButtonBg}" Foreground="White" Click="btnRun_Click">
                     <iconPacks:PackIconMaterial Kind="Play" Width="15" Height="15"/>
@@ -101,9 +101,7 @@
                 <Button Name="btnHelp" Margin="5" Width="35" Height="30" Background="{StaticResource ButtonBg}" Foreground="White" >
                     <iconPacks:PackIconMaterial Kind="Helicopter" Width="15" Height="15" Spin="True"/>
                 </Button>
-                <Button Name="btnLoadPath" Margin="5" Width="35" Height="30" Background="{StaticResource ButtonBg}" Foreground="White" Click="btnLoadPath_Click">
-                    <iconPacks:PackIconMaterial Kind="Folder" Width="15" Height="15"/>
-                </Button>
+
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
@@ -125,29 +123,42 @@
 
         <GridSplitter Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Height="5" HorizontalAlignment="Stretch" Background="#333"/>
 
+        <Grid Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="#252526" Margin="5,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <TreeView x:Name="fileExplorer" 
-          SelectedItemChanged="fileExplorer_SelectedItemChanged"
-          Grid.Column="0" 
-          Grid.Row="0"
-          Grid.RowSpan="2"
-          Background="#252526" 
-          Foreground="White" 
-          BorderThickness="0">
-            
-            <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding Children}">
-                    <StackPanel Orientation="Horizontal">
-                        <iconPacks:PackIconMaterial Kind="{Binding IconKind}" 
-                                        Width="16" Height="16" 
-                                        Margin="0,0,5,0" 
-                                        Foreground="{Binding IconColor}"/>
-                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </HierarchicalDataTemplate>
-            </TreeView.ItemTemplate>
 
-        </TreeView>
+            <Button Name="btnSelectFolder" 
+            Grid.Row="1"
+            Content="Selectează folderul" 
+            Background="Transparent"
+            Width="150" Height="40"
+            Style="{StaticResource FlatButtonStyle}"
+            BorderThickness="0"
+            Foreground="#D4D4D4"
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            Click="btnSelectFolder_Click"/>
+
+            <TreeView x:Name="fileExplorer" 
+              Grid.Row="1"
+              Visibility="Collapsed"
+              SelectedItemChanged="fileExplorer_SelectedItemChanged"
+              Background="Transparent" 
+              Foreground="White" 
+              BorderThickness="0"
+              Margin="0,5,0,0">
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconMaterial Kind="{Binding IconKind}" Width="16" Height="16" Margin="0,0,5,0" Foreground="{Binding IconColor}"/>
+                            <TextBlock Text="{Binding Name}" VerticalAlignment="Center" Foreground="#D4D4D4" FontSize="13"/>
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </Grid>
 
         <TextBox Name="txtConsole" Grid.Row="3" 
                  IsReadOnly="True" 

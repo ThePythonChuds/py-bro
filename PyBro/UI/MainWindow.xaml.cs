@@ -24,7 +24,6 @@ namespace PyBro.UI
         public MainWindow()
         {
             InitializeComponent();
-            LoadFolder(@"C:\Users\tudor\Desktop\testing");
         }
 
         public string GetBuffer()
@@ -44,7 +43,7 @@ namespace PyBro.UI
             string path = null;
             if (string.IsNullOrWhiteSpace(runScript))
             {
-                txtConsole.Text = "Scrie ceva cod Python mai întâi!";
+                txtConsole.Text = "Scrie cod!";
                 return;
             }
 
@@ -73,12 +72,7 @@ namespace PyBro.UI
             }
             fileManager.SaveBuffer(path, runScript);
         }
-        private void btnLoadPath_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            bool? result = fileDialog.ShowDialog(); // TODO: Path dir
-            FileManager fileManager = new FileManager();
-        }
+
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
@@ -184,8 +178,16 @@ namespace PyBro.UI
         {
             if (Directory.Exists(path))
             {
-                var root = TreeDir.BuildFileTree(path);
-                fileExplorer.ItemsSource = root;
+                var rootFolder = new FileItem
+                {
+                    Name = System.IO.Path.GetFileName(path), 
+                    Path = path,
+                    IconKind = "Folder",
+                    IconColor = Brushes.Orange, 
+                    Children = TreeDir.BuildFileTree(path) 
+                };
+
+                fileExplorer.ItemsSource = new List<FileItem> { rootFolder };
             }
         }
         private void fileExplorer_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
@@ -204,6 +206,21 @@ namespace PyBro.UI
                 {
                     txtConsole.AppendText("\n[ERROR] " + ex.Message);
                 }
+            }
+        }
+
+        private void btnSelectFolder_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new Microsoft.Win32.OpenFolderDialog();
+            dialog.Title = "Selectează folderul";
+
+            if (dialog.ShowDialog() == true)
+            {
+                string selectedPath = dialog.FolderName;
+
+                LoadFolder(selectedPath);
+                btnSelectFolder.Visibility = Visibility.Collapsed;
+                fileExplorer.Visibility = Visibility.Visible;
             }
         }
     }
