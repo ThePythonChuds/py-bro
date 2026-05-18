@@ -2,6 +2,11 @@ namespace PyBro
 {
     public class PythonException : System.Exception
     {
+        public PythonException()
+        {
+
+        }
+
         public PythonException(string message) : base(message)
         {
             

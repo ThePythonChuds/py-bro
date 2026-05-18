@@ -11,8 +11,8 @@ namespace PyBro
     /// </summary>
     public class PythonInterpreter : IPythonInterpreter
     {
-        private ScriptEngine _scriptEngine;
-        private ScriptScope _scriptScope;
+        private readonly ScriptEngine _scriptEngine;
+        private readonly ScriptScope _scriptScope;
 
         public PythonInterpreter()
         {
@@ -28,7 +28,7 @@ namespace PyBro
         /// <exception cref="PythonException"> If the script is not valid python or Python.NET problem</exception>
         public (string, string) RunScript(string script)
         {
-            // Filip: Orice exceptie prinsa este cel mai probabilo eroare in scriptul python pe care il rulam.
+            // Filip: Orice exceptie prinsa este cel mai probabil o eroare in scriptul python pe care il rulam.
             // F: Poate sa fie si o eroare interna IronPython, dar cred ca sansele sunt mici. Nu uita sa bei apa!
             try
             {
@@ -47,13 +47,12 @@ namespace PyBro
                 string errText = new StreamReader(stderr).ReadToEnd();
 
                 return (outText, errText);
-            } catch (Exception e)
-            {
+            } catch {
                 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 // !!!: Filip: DACA VEZI ASTA, AMINTESTE-I LUI BELIGAN CA TREBUIE SA AFISAM SI O EROARE PT USER IN CAZ CA SCRIPTUL PYTHON NU POATE RULA! MERCI!
 
                 System.Console.WriteLine("Error: PythonInterpreter.RunScript()");
-                throw new PythonException();
+                throw new PythonException("Error while trying to run the python script!");
             }
         }
     }

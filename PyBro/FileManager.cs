@@ -17,10 +17,10 @@ namespace PyBro
             try
             {
                 File.Create(path).Dispose();
-            } catch (Exception e)
+            } catch
             {
                 System.Console.WriteLine("Error: FileManager.CreateFile()");
-                throw new FileException();
+                throw new FileException("Can not create file " + path);
             }
         }
 
@@ -36,15 +36,15 @@ namespace PyBro
         {
             try
             {
-                var dir = Path.GetDirectoryName(path);
+                var dir = GetDirectoryName(path);
 
-                this.EnsureDirectoryExists(dir);
+                EnsureDirectoryExists(dir);
 
                 File.WriteAllText(path, buffer);
-            } catch (Exception e)
+            } catch
             {
                 System.Console.WriteLine("Error: FileManager.SaveBuffer()");
-                throw new FileException();
+                throw new FileException("Can not write to file " + path);
             }
         }
 
@@ -57,20 +57,11 @@ namespace PyBro
         /// <exception cref="FileException">If the path does not point to a file.</exception>
         public void RemoveFile(string path)
         {
-            try
+            if (!File.Exists(path))
             {
-                if (!File.Exists(path))
-                    throw new FileException();
-                File.Delete(path);
+                throw new FileException("File " + path + " does not exist!");
             }
-            catch (FileException)
-            {
-                throw;
-            }
-            catch (Exception e)
-            {
-                throw new FileException();
-            }
+            File.Delete(path);
         }
 
         /// <summary>
@@ -83,10 +74,9 @@ namespace PyBro
         {
             try {
                 return File.ReadAllText(path);
-            } catch (Exception e)
-            {
+            } catch {
                 System.Console.WriteLine("Error: FileManager.GetFileContent()");
-                throw new FileException();
+                throw new FileException("Can not read from file " + path);
             }
         }
 
@@ -94,7 +84,7 @@ namespace PyBro
         /// This method creates a directory at a certain path. If the directory already exists, it does nothing.
         /// </summary>
         /// <param name="dirPath">Path of the directory.</param>
-        private void EnsureDirectoryExists(string dirPath)
+        private static void EnsureDirectoryExists(string dirPath)
         {
             if (!Directory.Exists(dirPath))
             {
@@ -102,7 +92,24 @@ namespace PyBro
             }
         }
 
+        private static string GetDirectoryName(string path)
+        {
+            string? dir = null;
+            try
+            {
+                dir = Path.GetDirectoryName(path);
+            }
+            catch
+            {
+                throw new FileException("path " + path + " is invalid!");
+            }
 
+            if (dir == null)
+            {
+                throw new FileException("path " + path + " denotes a root directory or is null!");
+            }
+            return dir;
+        }
     
         }
 }
