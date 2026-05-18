@@ -6,7 +6,8 @@ namespace PyBro {
 
         private IFileManager _fileManager;
 
-
+        // key -> file name
+        // value -> text buffer
         private Dictionary<string, ITextBuffer> _textBuffers;
 
         public Model(IPythonInterpreter pi, IFileManager fm)
@@ -16,6 +17,10 @@ namespace PyBro {
             _textBuffers = new Dictionary<string, ITextBuffer>();
         }
 
+        public void AddTextBuffer(string fileName, ITextBuffer textBuffer)
+        {
+            _textBuffers[fileName] = textBuffer;
+        }
 
         /// <summary>
         /// Checks every tick for what it should do
@@ -28,7 +33,5 @@ namespace PyBro {
 
             return result; 
         }
-
-        
     }
 }

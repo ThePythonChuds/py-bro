@@ -37,13 +37,11 @@ namespace PyBro {
         /// 
         /// </summary>
         /// <returns></returns>
-        public View.TickInfo PackViewTickInfo()
+        public ViewTickInfo PackViewTickInfo()
         {
 
-            return new View.TickInfo(_ui.GetBuffer());
+            return new ViewTickInfo(_ui.GetBuffer());
             
         }
-
-       
     }
 }

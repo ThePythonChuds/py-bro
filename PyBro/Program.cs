@@ -9,7 +9,6 @@ class Program
         var app = new ApplicationBuilder()
             .WithPythonInterpreter(new PythonInterpreter())
             .WithFileManager(new FileManager())
-            .WithTextBufferManager(new TextBufferManager())
             .Build();
 
         app.Run();

@@ -15,6 +15,6 @@ namespace PyBro
         /// <returns>The tick information to be applied to the model.</returns>
         ModelTickInfo ApplyTickInfo(ViewTickInfo tickInfo);
 
-        void AddTextBuffer(ITextBuffer textBuffer);
+        void AddTextBuffer(string fileName, ITextBuffer textBuffer);
     }
 }

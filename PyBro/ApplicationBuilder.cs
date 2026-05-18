@@ -9,7 +9,6 @@ namespace PyBro
     class ApplicationBuilder
     {
         private IPythonInterpreter? _pi = null;
-        private ITextBuffer? _tb = null;
         private IFileManager? _fm = null;
 
         public ApplicationBuilder()
@@ -20,12 +19,6 @@ namespace PyBro
         public ApplicationBuilder WithPythonInterpreter(IPythonInterpreter pi)
         {
             _pi = pi;
-            return this;
-        }
-
-        public ApplicationBuilder WithTextBufferManager(ITextBuffer tb)
-        {
-            _tb = tb;
             return this;
         }
 
@@ -41,16 +34,12 @@ namespace PyBro
             {
                 throw new InvalidOperationException("PythonInterpreter is required to build the application.");
             }
-            if (_tb == null)
-            {
-                throw new InvalidOperationException("TextBufferManager is required to build the application.");
-            }
             if (_fm == null)
             {
                 throw new InvalidOperationException("FileManager is required to build the application.");
             }
 
-            var model = new Model(_pi, _fm, _tb);
+            var model = new Model(_pi, _fm);
             var view = new View();
             var controller = new Controller(model, view);
             return new Application(model, view, controller);
