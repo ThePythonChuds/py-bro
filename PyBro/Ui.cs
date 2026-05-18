@@ -39,5 +39,13 @@ namespace PyBro
         public void RemoveFile(string path) { }
         public void Refresh() { }
         public void RunScript() { }
+        public string GetCurrentFile() { return this.MainWindow.CurrentFile ?? ""; }
+        public void UpdateBuffer(string bufferContent)
+        {
+            System.Windows.Application.Current.Dispatcher.Invoke(() =>
+            {
+                this.MainWindow.UpdateBuffer(bufferContent);
+            });
+        }
     }
 }

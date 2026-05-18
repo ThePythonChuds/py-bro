@@ -20,16 +20,12 @@ namespace PyBro {
         /// <param name="modelInfo"></param>
         public void Show(ModelTickInfo modelInfo)
         {
-            if (!string.IsNullOrWhiteSpace(modelInfo.OutputToConsole))
+            if (modelInfo.Commands != null)
             {
-                System.Console.WriteLine("STDOUT:");
-                System.Console.WriteLine(modelInfo.OutputToConsole);
-            }
-
-            if (!string.IsNullOrWhiteSpace(modelInfo.ErroredToConsole))
-            {
-                System.Console.WriteLine("STDERR:");
-                System.Console.WriteLine(modelInfo.ErroredToConsole);
+                foreach (var command in modelInfo.Commands)
+                {
+                    command.Execute(_ui, _treeDir);
+                }
             }
         }
 

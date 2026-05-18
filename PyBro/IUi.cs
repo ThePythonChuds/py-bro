@@ -9,5 +9,7 @@ namespace PyBro {
         public void RemoveFile(string path);
         public void Refresh();
         public void RunScript();
+        public void UpdateBuffer(string bufferContent);
+        public string GetCurrentFile();
     }
 }
