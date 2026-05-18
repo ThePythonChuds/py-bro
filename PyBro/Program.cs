@@ -6,6 +6,12 @@ class Program
     [System.STAThreadAttribute]
     public static void Main(string[] args)
     {
-        new PyBro.Application().Run();
+        var app = new ApplicationBuilder()
+            .WithPythonInterpreter(new PythonInterpreter())
+            .WithFileManager(new FileManager())
+            .WithTextBufferManager(new TextBufferManager())
+            .Build();
+
+        app.Run();
     }
 }

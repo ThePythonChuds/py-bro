@@ -1,5 +1,5 @@
 namespace PyBro {
-    public class Controller {
+    public class Controller : IController {
         private Model _model;
         private View _view;
 

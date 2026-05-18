@@ -1,8 +1,9 @@
 using PyBro.UI;
 using System.Security.Cryptography.X509Certificates;
+using System.Windows.Automation.Peers;
 
 namespace PyBro {
-    public class View {
+    public class View : IView{
         private IUi _ui;
         private ITreeDir _treeDir;
         
@@ -17,7 +18,7 @@ namespace PyBro {
         /// 
         /// </summary>
         /// <param name="modelInfo"></param>
-        public void Show(Model.TickInfo modelInfo)
+        public void Show(ModelTickInfo modelInfo)
         {
             if (!string.IsNullOrWhiteSpace(modelInfo.OutputToConsole))
             {
@@ -43,14 +44,6 @@ namespace PyBro {
             
         }
 
-        public class TickInfo
-        {
-            public string TextBuffer { get; private set; }
-            
-            public TickInfo(string buffer)
-            {
-                TextBuffer = buffer;
-            }
-        }
+       
     }
 }

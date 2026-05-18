@@ -1,33 +1,20 @@
 using System;
+using System.Windows.Automation.Peers;
 using System.Windows.Threading;
 namespace PyBro {
 
-    public class Application {
+    public class Application(IModel model, IView view, IController controller)
+    {
 
-        private System.Windows.Application _app;
+        private System.Windows.Application _app = new System.Windows.Application();
 
-        private Model _model;
+        private IModel _model = model;
 
-        private View _view;
+        private IView _view = view;
 
-        private Controller _controller;
+        private IController _controller = controller;
 
-        private bool _isRunning;
-
-
-        public Application()
-        {
-            // NOTE: _app trebuie sa fie initializat inaintea celorlalte componente MVC
-            _app = new System.Windows.Application();
-            
-            _isRunning = true;
-
-            // Initializare componente MVC
-            _model      = new Model();
-            _view       = new View();
-            _controller = new Controller(_model, _view);
-        }
-
+        private bool _isRunning = true;
 
         [System.STAThreadAttribute]
         public void Run()
