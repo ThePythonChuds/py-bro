@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType> 
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+	 <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Commands\PyBro.Commands.csproj" />
+    <ProjectReference Include="..\PyBro.Contracts\PyBro.Contracts.csproj" />
+    <ProjectReference Include="..\PyBro.Core\PyBro.Core.csproj" />
+    <ProjectReference Include="..\PyBro.MVC\PyBro.MVC.csproj" />
+    <ProjectReference Include="..\PyBro.UI\PyBro.UI.csproj" />
+  </ItemGroup>
+
+</Project>

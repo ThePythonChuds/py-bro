@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PyBro\PyBro.csproj" />
+    <ProjectReference Include="..\PyBro.IDE\PyBro.IDE.csproj" />
   </ItemGroup>
 
   <ItemGroup>
