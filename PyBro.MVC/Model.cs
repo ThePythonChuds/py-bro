@@ -29,7 +29,10 @@ namespace PyBro.MVC {
 
         public void ExecuteCommands()
         {
-            throw new NotImplementedException(); // TODO: implement command execution logic
+            for (var cmd = MessageQueues.ReceiveModelCommand(); cmd != null; cmd = MessageQueues.ReceiveModelCommand())
+            {
+                // TODO: Trateaza fiecare caz de comanda.
+            }
         }
 
     }
