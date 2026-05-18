@@ -1,6 +1,10 @@
-﻿using Microsoft.Win32;
+﻿using ICSharpCode.AvalonEdit;
+using ICSharpCode.AvalonEdit.Highlighting;
+using Microsoft.Win32;
 using Mono.Unix;
 using PyBro;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows;
@@ -9,13 +13,11 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static IronPython.Modules._ast;
-using System.Windows.Media.Animation;
-using System.Collections.Generic;
-using System;
 
 namespace PyBro.UI
 {
@@ -26,6 +28,7 @@ namespace PyBro.UI
         public MainWindow()
         {
             InitializeComponent();
+            txtEditor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinition("C#");
         }
 
         /// <summary>
@@ -117,7 +120,6 @@ namespace PyBro.UI
                 }
             }
             txtEditor.Focus();
-            txtEditor.CaretIndex = txtEditor.Text.Length;
         }
 
         /// <summary>
@@ -168,9 +170,11 @@ namespace PyBro.UI
                     WindowState = WindowState.Maximized;
                 else
                     WindowState = WindowState.Normal;
+            
+            return;
             }
 
-            if (e.LeftButton == MouseButtonState.Pressed)
+            if (e.LeftButton == MouseButtonState.Pressed && WindowState == WindowState.Normal)
             {
                 DragMove();
             }
@@ -248,5 +252,13 @@ namespace PyBro.UI
                 fileExplorer.Visibility = Visibility.Visible;
             }
         }
+        private void btnHelp_Click(object sender, RoutedEventArgs e)
+        {
+            HelpWindow helpWin = new HelpWindow();
+            helpWin.Owner = this; 
+            helpWin.ShowDialog(); 
+        }
+
+
     }
 }
