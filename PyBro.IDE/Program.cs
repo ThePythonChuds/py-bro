@@ -1,46 +1,42 @@
-﻿/*
- * Project: PyBro
- * File: Program.cs
- * Authors: Filip Robert - Andrei, Beligan Tudor, Modreanu Stefan, Pinzaru Alexandru - Gabriel
- *
- * Description:
- * This file contains the Program class, which represents the starting point
- * of the application.
- */
-
+﻿using PyBro.Contracts;
+using System;
+using System.Collections.Generic;
 using System.IO;
-using PyBro;
-using PyBro.Contracts;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-class Program
+namespace PyBro.IDE
 {
-    /// <summary>
-    /// Starts the PyBro application by dynamically loading the required components
-    /// and running the main application instance.
-    /// </summary>
-    /// <param name="args">Command-line arguments passed to the application.</param>
-    [System.STAThreadAttribute]
-    public static void Main(string[] args)
+    internal class Program
     {
-        string basePath = AppDomain.CurrentDomain.BaseDirectory;
+        /// <summary>
+        /// Starts the PyBro application by dynamically loading the required components
+        /// and running the main application instance.
+        /// </summary>
+        /// <param name="args">Command-line arguments passed to the application.</param>
+        [System.STAThreadAttribute]
+        public static void Main(string[] args)
+        {
+           
+            string modelDllPath = Path.Combine(basePath, "PyBro.Model.dll");
 
-        string modelDllPath = Path.Combine(basePath, "PyBro.Model.dll");
+            var pythonInterpreter = DynamicLoader.Load<IPythonInterpreter>(
+                modelDllPath,
+                "PyBro.PythonInterpreter"
+            );
 
-        var pythonInterpreter = DynamicLoader.Load<IPythonInterpreter>(
-            modelDllPath,
-            "PyBro.PythonInterpreter"
-        );
+            var fileManager = DynamicLoader.Load<IFileManager>(
+                modelDllPath,
+                "PyBro.FileManager"
+            );
 
-        var fileManager = DynamicLoader.Load<IFileManager>(
-            modelDllPath,
-            "PyBro.FileManager"
-        );
+            var app = new IdeBuilder()
+                .WithPythonInterpreter(pythonInterpreter)
+                .WithFileManager(fileManager)
+                .Build();
 
-        var app = new ApplicationBuilder()
-            .WithPythonInterpreter(pythonInterpreter)
-            .WithFileManager(fileManager)
-            .Build();
-
-        app.Run();
+            app.Run();
+        }
     }
 }

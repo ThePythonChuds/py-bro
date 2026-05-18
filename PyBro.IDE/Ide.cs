@@ -8,8 +8,6 @@
  * initializing the WPF application and starting the main controller update loop.
  */
 
-using System;
-using System.Windows.Automation.Peers;
 using System.Windows.Threading;
 
 using PyBro.Contracts;
@@ -21,7 +19,7 @@ namespace PyBro {
     /// Represents the main entry point of the application.
     /// This class connects the model, view, and controller, then starts the WPF interface.
     /// </summary>
-    public class Application(IModel model, IView view, IController controller)
+    internal class Ide(IModel model, IView view, IController controller)
     {
 
         private System.Windows.Application _app = new System.Windows.Application();

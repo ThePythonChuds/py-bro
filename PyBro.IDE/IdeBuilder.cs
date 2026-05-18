@@ -8,11 +8,6 @@
  * building and configuring the main application object using the Builder design pattern.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using PyBro.Contracts;
 using PyBro.MVC;
 
@@ -23,39 +18,39 @@ namespace PyBro
     /// This class uses the Builder design pattern to provide the required dependencies
     /// before creating the final Application instance.
     /// </summary>
-    class ApplicationBuilder
+    internal class IdeBuilder
     {
 
-        private IPythonInterpreter? pythonInterpereter = null;
+        private IPythonInterpreter? _pythonInterpereter = null;
 
         /// <summary>
         /// Sets the Python interpreter dependency required by the application.
         /// </summary>
         /// <param name="pi">The Python interpreter implementation.</param>
         /// <returns>The current builder instance, allowing chained method calls.</returns>
-        public ApplicationBuilder WithPythonInterpreter(IPythonInterpreter pi)
+        public IdeBuilder WithPythonInterpreter(IPythonInterpreter pi)
         {
-            pythonInterpereter = pi;
+            _pythonInterpereter = pi;
             return this;
         }
 
 
-        private IFileManager? fileManager = null;
+        private IFileManager? _fileManager = null;
 
         /// <summary>
         /// Sets the file manager dependency required by the application.
         /// </summary>
         /// <param name="fm">The file manager implementation.</param>
         /// <returns>The current builder instance, allowing chained method calls.</returns>
-        public ApplicationBuilder WithFileManager(IFileManager fm)
+        public IdeBuilder WithFileManager(IFileManager fm)
         {
-            fileManager = fm;
+            _fileManager = fm;
             return this;
         }
 
         private IUiAdapter? _uiAdapter = null;
 
-        public ApplicationBuilder WithUiAdapter(IUiAdapter uiAdapter)
+        public IdeBuilder WithUiAdapter(IUiAdapter uiAdapter)
         {
             _uiAdapter = uiAdapter;
             return this;
@@ -63,7 +58,7 @@ namespace PyBro
 
         private ITreeDir? _treeDir = null;
 
-        public ApplicationBuilder WithTreeDir(ITreeDir treeDir)
+        public IdeBuilder WithTreeDir(ITreeDir treeDir)
         {
             _treeDir = treeDir;
             return this;
@@ -76,22 +71,32 @@ namespace PyBro
         /// <exception cref="InvalidOperationException">
         /// Thrown when a required dependency has not been configured.
         /// </exception>
-        public Application Build()
+        public Ide Build()
         {
-            if (pythonInterpereter == null)
+            if (_pythonInterpereter == null)
             {
                 throw new InvalidOperationException("PythonInterpreter is required to build the application.");
             }
-            if (fileManager == null)
+
+            if (_fileManager == null)
             {
                 throw new InvalidOperationException("FileManager is required to build the application.");
             }
-            // TODO: Add checks for other dependencies like _uiAdapter and _treeDir if they are required for the application to function properly.
 
-            var model = new Model(pythonInterpereter, fileManager);
+            if (_uiAdapter == null)
+            {
+                throw new InvalidOperationException("UiAdapter is required to build the application.");
+            }
+
+            if (_treeDir == null)
+            {
+                throw new InvalidOperationException("TreeDir is required to build the application.");
+            }
+
+            var model = new Model(_pythonInterpereter, _fileManager);
             var view = new View(_uiAdapter, _treeDir);
             var controller = new Controller(model, view);
-            return new Application(model, view, controller);
+            return new Ide(model, view, controller);
         }
     }
 }
