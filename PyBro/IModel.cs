@@ -1,20 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+ * Project: PyBro
+ * File: IModel.cs
+ * Authors: Filip Robert - Andrei, Beligan Tudor, Modreanu Stefan, Pinzaru Alexandru - Gabriel
+ *
+ * Description:
+ * This file contains the IModel interface, which defines the operations required
+ * by the application's model layer.
+ */
 
 namespace PyBro
 {
+    /// <summary>
+    /// Defines the behavior required for the model component of the application.
+    /// </summary>
     public interface IModel
     {
         /// <summary>
-        /// Checks every tick for what it should do
+        /// Processes information received from the view during one application update.
         /// </summary>
-        /// <param name="tickInfo">The tick information from the view.</param>
-        /// <returns>The tick information to be applied to the model.</returns>
+        /// <param name="tickInfo">The information collected from the view during the current tick.</param>
+        /// <returns>The information that should be sent back to the view.</returns>
         ModelTickInfo ApplyTickInfo(ViewTickInfo tickInfo);
 
+        /// <summary>
+        /// Adds a text buffer and associates it with a file name.
+        /// </summary>
+        /// <param name="fileName">The name of the file associated with the text buffer.</param>
+        /// <param name="textBuffer">The text buffer that stores the file content.</param>
         void AddTextBuffer(string fileName, ITextBuffer textBuffer);
     }
 }

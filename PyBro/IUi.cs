@@ -1,13 +1,67 @@
-namespace PyBro {
-    public interface IUi {
-        public (Coords?, Coords?) GetHighlightCoords();
+/*
+ * Project: PyBro
+ * File: IUi.cs
+ * Authors: Filip Robert - Andrei, Beligan Tudor, Modreanu Stefan, Pinzaru Alexandru - Gabriel
+ *
+ * Description:
+ * This file contains the IUi interface, which defines the operations required
+ * for communication with the user interface layer.
+ */
 
-        public string GetBuffer();
-        public void SaveFile(string path);
-        public void CreateFile(string path);
-        public void OpenFile(string path);
-        public void RemoveFile(string path);
-        public void Refresh();
-        public void RunScript();
+namespace PyBro
+{
+    /// <summary>
+    /// Defines the behavior required for the user interface component.
+    /// </summary>
+    public interface IUi
+    {
+        /// <summary>
+        /// Returns the coordinates of the text selection or highlighted area.
+        /// </summary>
+        /// <returns>
+        /// A tuple containing the start and end coordinates of the highlighted area.
+        /// If no area is highlighted, the values may be null.
+        /// </returns>
+        (Coords?, Coords?) GetHighlightCoords();
+
+        /// <summary>
+        /// Returns the current text content from the editor.
+        /// </summary>
+        /// <returns>The text currently written in the editor.</returns>
+        string GetBuffer();
+
+        /// <summary>
+        /// Saves the current editor content to the specified file path.
+        /// </summary>
+        /// <param name="path">The path where the file should be saved.</param>
+        void SaveFile(string path);
+
+        /// <summary>
+        /// Creates a new file at the specified path.
+        /// </summary>
+        /// <param name="path">The path where the file should be created.</param>
+        void CreateFile(string path);
+
+        /// <summary>
+        /// Opens the file located at the specified path.
+        /// </summary>
+        /// <param name="path">The path of the file that should be opened.</param>
+        void OpenFile(string path);
+
+        /// <summary>
+        /// Removes the file located at the specified path.
+        /// </summary>
+        /// <param name="path">The path of the file that should be removed.</param>
+        void RemoveFile(string path);
+
+        /// <summary>
+        /// Refreshes the user interface content.
+        /// </summary>
+        void Refresh();
+
+        /// <summary>
+        /// Runs the current script written in the editor.
+        /// </summary>
+        void RunScript();
     }
 }

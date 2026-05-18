@@ -1,23 +1,36 @@
+/*
+ * Project: PyBro
+ * File: FileManager.cs
+ * Authors: Filip Robert - Andrei, Beligan Tudor, Modreanu Stefan, Pinzaru Alexandru - Gabriel
+ *
+ * Description:
+ * This file contains the FileManager class, which handles basic file operations
+ * such as creating, saving, reading, and removing files.
+ */
+
 using System.IO;
 
 namespace PyBro
 {
+    /// <summary>
+    /// Provides file management operations used by the application.
+    /// </summary>
     public class FileManager : IFileManager
     {
-
         /// <summary>
-        /// Creates an empty file. The method is blocking.
+        /// Creates an empty file at the specified path.
         /// </summary>
-        /// <param name="path">Path of the file to be created</param>
+        /// <param name="path">The path where the file should be created.</param>
         /// <exception cref="FileException">
-        /// Thrown when name is null.
+        /// Thrown when the file cannot be created.
         /// </exception>
         public void CreateFile(string path)
         {
             try
             {
                 File.Create(path).Dispose();
-            } catch
+            }
+            catch
             {
                 System.Console.WriteLine("Error: FileManager.CreateFile()");
                 throw new FileException("Can not create file " + path);
@@ -25,13 +38,14 @@ namespace PyBro
         }
 
         /// <summary>
-        /// This method creates the file if a file does not exist at that path, and tries to overwrite the buffer to the file if it exists already. 
-        /// The previous content of the file before method call is lost.
-        /// The method is blocking.
+        /// Saves the provided text buffer to a file.
+        /// If the file already exists, its previous content is overwritten.
         /// </summary>
-        /// <param name="path">Path of the file to be created</param>
-        /// <param name="buffer">Content of the file</param>
-        /// <exception cref="FileException">If file creation failed.</exception>
+        /// <param name="path">The path of the file where the buffer should be saved.</param>
+        /// <param name="buffer">The text content that should be written to the file.</param>
+        /// <exception cref="FileException">
+        /// Thrown when the file cannot be written.
+        /// </exception>
         public void SaveBuffer(string path, string buffer)
         {
             try
@@ -41,7 +55,8 @@ namespace PyBro
                 EnsureDirectoryExists(dir);
 
                 File.WriteAllText(path, buffer);
-            } catch
+            }
+            catch
             {
                 System.Console.WriteLine("Error: FileManager.SaveBuffer()");
                 throw new FileException("Can not write to file " + path);
@@ -49,41 +64,43 @@ namespace PyBro
         }
 
         /// <summary>
-        /// Requests OS for removing a file.
-        /// If the file does not exist, no exception is thrown
-        /// The method is blocking.
+        /// Removes the file located at the specified path.
         /// </summary>
-        /// <param name="path">Path of the file to be removed</param>
-        /// <exception cref="FileException">If the path does not point to a file.</exception>
+        /// <param name="path">The path of the file that should be removed.</param>
+        /// <exception cref="FileException">
+        /// Thrown when the specified file does not exist.
+        /// </exception>
         public void RemoveFile(string path)
         {
             if (!File.Exists(path))
             {
                 throw new FileException("File " + path + " does not exist!");
             }
+
             File.Delete(path);
         }
 
         /// <summary>
-        /// Loads file content into a string.
-        /// The method is blocking.
+        /// Reads the content of a file and returns it as a string.
         /// </summary>
-        /// <param name="path">Path of the file to be read</param>
-        /// <returns>The content of the file.</returns>
+        /// <param name="path">The path of the file that should be read.</param>
+        /// <returns>The complete text content of the file.</returns>
+        /// <exception cref="FileException">
+        /// Thrown when the file cannot be read.
+        /// </exception>
         public string GetFileContent(string path)
         {
-            try {
+            try
+            {
                 return File.ReadAllText(path);
-            } catch {
+            }
+            catch
+            {
                 System.Console.WriteLine("Error: FileManager.GetFileContent()");
                 throw new FileException("Can not read from file " + path);
             }
         }
 
-        /// <summary>
-        /// This method creates a directory at a certain path. If the directory already exists, it does nothing.
-        /// </summary>
-        /// <param name="dirPath">Path of the directory.</param>
         private static void EnsureDirectoryExists(string dirPath)
         {
             if (!Directory.Exists(dirPath))
@@ -95,6 +112,7 @@ namespace PyBro
         private static string GetDirectoryName(string path)
         {
             string? dir = null;
+
             try
             {
                 dir = Path.GetDirectoryName(path);
@@ -108,8 +126,8 @@ namespace PyBro
             {
                 throw new FileException("path " + path + " denotes a root directory or is null!");
             }
+
             return dir;
         }
-    
-        }
+    }
 }

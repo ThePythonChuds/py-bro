@@ -1,3 +1,13 @@
+/*
+ * Project: PyBro
+ * File: IFileManager.cs
+ * Authors: Filip Robert - Andrei, Beligan Tudor, Modreanu Stefan, Pinzaru Alexandru - Gabriel
+ *
+ * Description:
+ * This file contains the IFileManager interface, which defines the basic file
+ * operations required by the application.
+ */
+
 namespace PyBro {
     public interface IFileManager {
         
