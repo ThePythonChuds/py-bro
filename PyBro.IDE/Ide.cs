@@ -13,7 +13,7 @@ using System.Windows.Threading;
 using PyBro.Contracts;
 using PyBro.UI;
 
-namespace PyBro {
+namespace PyBro.IDE {
 
     /// <summary>
     /// Represents the main entry point of the application.
@@ -30,8 +30,6 @@ namespace PyBro {
 
         private IController _controller = controller;
 
-        private bool _isRunning = true;
-
         /// <summary>
         /// Starts the application, connects the controller to the update loop,
         /// and displays the main window.
@@ -39,10 +37,8 @@ namespace PyBro {
         [System.STAThreadAttribute]
         public void Run()
         {
-
-            this.HookControllerTick();
-
             _app.Run();
+            this.HookControllerTick();
         }
 
         /// <summary>

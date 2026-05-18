@@ -25,12 +25,16 @@ namespace PyBro.Commands
             fileManager.SaveBuffer(_path, _script);
         }
 
-        private void ValidateArgs(object[] args)
+        private static void ValidateArgs(object[] args)
         {
             if (args == null || args.Length < 1)
+            {
                 throw new ArgumentException("Expected at least one argument: IFileManager reference.");
-            if (args[0] is not IFileManager)
+            }
+            if (args[0] == null || args[0] is not IFileManager)
+            {
                 throw new ArgumentException("First argument must be of type IFileManager.");
+            }
         }
     }
 }

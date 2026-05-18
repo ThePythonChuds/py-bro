@@ -19,11 +19,11 @@ namespace PyBro.IDE
         [System.STAThreadAttribute]
         public static void Main(string[] args)
         {
-            var app = new System.Windows.Application();
             var mainWindow = new MainWindow();
 
             var ide = new IdeBuilder()
-                .WithApp(app)
+                .WithApp(new System.Windows.Application())
+                .WithMainWindow(mainWindow)
                 .WithPythonInterpreter(new PythonInterpreter())
                 .WithFileManager(new FileManager())
                 .WithUiAdapter(new UiAdapter(mainWindow))

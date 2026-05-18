@@ -10,8 +10,9 @@
 
 using PyBro.Contracts;
 using PyBro.MVC;
+using PyBro.UI;
 
-namespace PyBro
+namespace PyBro.IDE
 {
     /// <summary>
     /// Builds and configures the main application object.
@@ -25,6 +26,13 @@ namespace PyBro
         public IdeBuilder WithApp(System.Windows.Application app)
         {
             _app = app;
+            return this;
+        }
+
+        private MainWindow _mainWindow;
+        public IdeBuilder WithMainWindow(MainWindow mainWindow)
+        {
+            _mainWindow = mainWindow;
             return this;
         }
 

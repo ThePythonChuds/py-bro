@@ -13,7 +13,7 @@ namespace PyBro.Commands
         private readonly string _script = script;
 
         /// <summary>
-        /// arg[0] python interpretor reference
+        /// arg[0] -> A reference to the PythonInterpreter instance
         /// </summary>
         /// <param name="args"></param>
         public void Execute(object[] args) 
