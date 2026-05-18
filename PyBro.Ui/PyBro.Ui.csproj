@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<PackageReference Include="AvalonEdit" Version="6.3.1.120" />
+	<PackageReference Include="MahApps.Metro.IconPacks.Material" Version="6.2.1" />
+    <ProjectReference Include="..\PyBro.Contracts\PyBro.Contracts.csproj"/>
+  </ItemGroup>
+
+</Project>
