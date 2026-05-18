@@ -23,7 +23,7 @@ namespace PyBro.UI
 {
     public partial class MainWindow : Window
     {
-        private string _currentFilePath = null;
+        public string? CurrentFile { get; private set; } = null;
 
         public MainWindow()
         {
@@ -74,19 +74,20 @@ namespace PyBro.UI
                 txtConsole.AppendText(output);
             }
 
-            if (_currentFilePath != null)
-                path = _currentFilePath;
+            if (CurrentFile != null)
+                path = CurrentFile;
             else
             {
                 bool? result = saveFileDialog.ShowDialog();
                 if (result == true)
                 {
                     path = saveFileDialog.FileName;
-                    _currentFilePath = saveFileDialog.FileName;
+                    CurrentFile = saveFileDialog.FileName;
                 }
             }
             fileManager.SaveBuffer(path, runScript);
         }
+
 
         /// <summary>
         /// Opens a dialog to select a local file and loads its content into the editor.
@@ -103,7 +104,7 @@ namespace PyBro.UI
                 {
                     string loadedScript;
                     string filePath = fileDialog.FileName;
-                    _currentFilePath = filePath;
+                    CurrentFile = filePath;
                     loadedScript = fileManager.GetFileContent(filePath);
                     txtEditor.Text = loadedScript;
                 }
@@ -137,15 +138,15 @@ namespace PyBro.UI
             string scriptToSave = txtEditor.Text;
             string path = null;
 
-            if (_currentFilePath != null)
-                path = _currentFilePath;
+            if (CurrentFile != null)
+                path = CurrentFile;
             else
             {
                 bool? result = saveFileDialog.ShowDialog();
                 if (result == true)
                 {
                     path = saveFileDialog.FileName;
-                    _currentFilePath = saveFileDialog.FileName;
+                    CurrentFile = saveFileDialog.FileName;
                 }
                 else
                     return;
@@ -153,8 +154,9 @@ namespace PyBro.UI
 
             try
             {
-                fileManager.SaveBuffer(_currentFilePath, scriptToSave);
-                txtConsole.AppendText("\n[INFO] Save successful.");
+
+                fileManager.SaveBuffer(CurrentFile, scriptToSave);
+                txtConsole.AppendText("\n[INFO] Salvare reușită.");
             }
             catch (Exception ex)
             {
@@ -179,6 +181,8 @@ namespace PyBro.UI
                 DragMove();
             }
         }
+
+
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
@@ -225,7 +229,7 @@ namespace PyBro.UI
                 {
                     FileManager fm = new FileManager();
                     txtEditor.Text = fm.GetFileContent(selectedItem.Path);
-                    _currentFilePath = selectedItem.Path;
+                    CurrentFile = selectedItem.Path;
                     this.Title = $"PyBro - {selectedItem.Name}";
                 }
                 catch (Exception ex)
@@ -252,6 +256,7 @@ namespace PyBro.UI
                 fileExplorer.Visibility = Visibility.Visible;
             }
         }
+
         private void btnHelp_Click(object sender, RoutedEventArgs e)
         {
             HelpWindow helpWin = new HelpWindow();
@@ -260,5 +265,16 @@ namespace PyBro.UI
         }
 
 
+        private void txtEditor_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+        public void UpdateBuffer(string bufferContent)
+        {
+            txtEditor.Text = bufferContent;
+        }
     }
 }
+
+
+    
