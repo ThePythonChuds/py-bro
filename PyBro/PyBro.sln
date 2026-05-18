@@ -2,9 +2,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.5.11723.231
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PyBro", "PyBro.csproj", "{F98AC7D0-B0DB-B4BB-6C86-32221DB791D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PyBro.IDE", "PyBro.IDE.csproj", "{F98AC7D0-B0DB-B4BB-6C86-32221DB791D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PyBro.Tests", "..\PyBro.Tests\PyBro.Tests.csproj", "{82DD4F60-3CFB-4168-8E24-2A447E1BFA6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PyBro.Core", "..\Pybro.Model\PyBro.Core.csproj", "{17FCF534-8DCB-4053-93D6-A81DFC3BA838}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PyBro.Contacts", "..\Pybro.Contacts\PyBro.Contacts.csproj", "{839CA13F-6576-4275-8606-D25645DC4683}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PyBro.Ui", "..\PyBro.Ui\PyBro.Ui.csproj", "{5BE5244A-8D6D-4164-B01B-45D7E42546D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PyBro.MVC", "..\PyBro.MVC\PyBro.MVC.csproj", "{E9AF852B-E533-4068-8506-AB3F083BB964}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +28,22 @@ Global
 		{82DD4F60-3CFB-4168-8E24-2A447E1BFA6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82DD4F60-3CFB-4168-8E24-2A447E1BFA6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82DD4F60-3CFB-4168-8E24-2A447E1BFA6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17FCF534-8DCB-4053-93D6-A81DFC3BA838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17FCF534-8DCB-4053-93D6-A81DFC3BA838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17FCF534-8DCB-4053-93D6-A81DFC3BA838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17FCF534-8DCB-4053-93D6-A81DFC3BA838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{839CA13F-6576-4275-8606-D25645DC4683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{839CA13F-6576-4275-8606-D25645DC4683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{839CA13F-6576-4275-8606-D25645DC4683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{839CA13F-6576-4275-8606-D25645DC4683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BE5244A-8D6D-4164-B01B-45D7E42546D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BE5244A-8D6D-4164-B01B-45D7E42546D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BE5244A-8D6D-4164-B01B-45D7E42546D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BE5244A-8D6D-4164-B01B-45D7E42546D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9AF852B-E533-4068-8506-AB3F083BB964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9AF852B-E533-4068-8506-AB3F083BB964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9AF852B-E533-4068-8506-AB3F083BB964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9AF852B-E533-4068-8506-AB3F083BB964}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

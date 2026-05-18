@@ -13,4 +13,8 @@
     <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="6.2.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Pybro.Model\PyBro.Core.csproj" />
+  </ItemGroup>
+
 </Project>
