@@ -1,5 +1,5 @@
 - [ ] Documentatie SRS
-- [ ] Meniu help
+- [X] Meniu help
 - [ ] Diagrame UML
   - [ ] Cazuri de utilizare
   - [ ] Clase
@@ -7,11 +7,11 @@
   - [ ] Secvente
 - [X] Unit Testing 20 cazuri
 - [X] Design Pattern diferit de cele facute la lab
-- [X] Commentarii
-  - [X] Headere
-  - [X] Comentarii de documentatie
-  - [X] Comentarii cu explicatii
+- [] Commentarii
+  - [] Headere
+  - [] Comentarii de documentatie
+  - [] Comentarii cu explicatii
 - [X] Tratarea exceptiilor
 - [X] Naming conventions
-- [ ] DLL-uri separate
+- [X] DLL-uri separate
 - [ ] Lista cu ce a lucrat fiecare membru
