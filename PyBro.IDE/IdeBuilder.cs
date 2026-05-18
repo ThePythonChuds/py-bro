@@ -121,7 +121,7 @@ namespace PyBro.IDE
             var model = new Model(_pythonInterpereter, _fileManager);
             var view = new View(_uiAdapter, _treeDir);
             var controller = new Controller(model, view);
-            return new Ide(model, view, controller, _app);
+            return new Ide(model, view, controller, _app, _mainWindow);
         }
     }
 }

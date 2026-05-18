@@ -23,7 +23,12 @@ namespace PyBro.Contracts
             {
                 return null;
             }
-            return _viewToModelCommandQueue.Dequeue();
+
+            if (_viewToModelCommandQueue.TryDequeue(out var item))
+            {
+                return item;
+            }
+            return null;
         }
 
         public static void SendViewCommand(IViewCommand cmd)
@@ -37,7 +42,12 @@ namespace PyBro.Contracts
             {
                 return null;
             }
-            return _modelToViewCommandQueue.Dequeue();
+            if (_modelToViewCommandQueue.TryDequeue(out var item))
+            {
+                return item;
+            }
+
+            return null;
         }
     }
 }
