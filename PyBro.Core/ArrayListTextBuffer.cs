@@ -86,14 +86,37 @@ namespace PyBro.Core
                     _buffer[i] = correctedLine;
                 }
 
-                if (line.Contains(":")) // FIXME: Filip: Daca codul python are un string
-                                        // sau comentarriu care contine ':'
-                {                       // atunci indentarea va fi gresita
+                if (line != null && ShouldIncrementIndentation(line))
+                {                       
                     indentLevel++;
                 }
             }
-
             return (indentLevel, indentString);
+        }
+
+        private static bool ShouldIncrementIndentation(in string line)
+        {
+            bool inSingle = false;
+            bool inDouble = false;
+
+            for (int i = 0; i < line.Length; i++)
+            {
+                char c = line[i];
+
+                if (c == '\'' && !inDouble)
+                    inSingle = !inSingle;
+
+                else if (c == '"' && !inSingle)
+                    inDouble = !inDouble;
+
+                else if (c == '#' && !inSingle && !inDouble)
+                    return false;
+
+                else if (c == ':' && !inSingle && !inDouble)
+                    return true;
+            }
+
+            return false;
         }
 
         /// <summary>
