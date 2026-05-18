@@ -31,7 +31,7 @@ namespace PyBro {
         {
             var result = new ModelTickInfo();
 
-            return result; 
+            return result;
         }
     }
 }
