@@ -10,7 +10,9 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\Commands\PyBro.Commands.csproj" />
     <ProjectReference Include="..\PyBro.Contracts\PyBro.Contracts.csproj" />
+    <ProjectReference Include="..\PyBro.Core\PyBro.Core.csproj" />
     <ProjectReference Include="..\PyBro.MVC\PyBro.MVC.csproj" />
     <ProjectReference Include="..\PyBro.UI\PyBro.UI.csproj" />
   </ItemGroup>

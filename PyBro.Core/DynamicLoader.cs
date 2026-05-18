@@ -17,7 +17,7 @@ namespace PyBro
     /// <summary>
     /// Provides functionality for dynamically loading objects from external DLL files.
     /// </summary>
-    public static class DynamicLoader : IDynamicLoader
+    public static class DynamicLoader
     {
         /// <summary>
         /// Loads an object from a DLL and casts it to the requested interface type.

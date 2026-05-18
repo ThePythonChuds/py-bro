@@ -21,6 +21,13 @@ namespace PyBro
     internal class IdeBuilder
     {
 
+        private System.Windows.Application _app;
+        public IdeBuilder WithApp(System.Windows.Application app)
+        {
+            _app = app;
+            return this;
+        }
+
         private IPythonInterpreter? _pythonInterpereter = null;
 
         /// <summary>
@@ -73,6 +80,11 @@ namespace PyBro
         /// </exception>
         public Ide Build()
         {
+            if (_app == null)
+            {
+                throw new InvalidOperationException("Application is required to build the application.");
+            }
+
             if (_pythonInterpereter == null)
             {
                 throw new InvalidOperationException("PythonInterpreter is required to build the application.");
@@ -96,7 +108,7 @@ namespace PyBro
             var model = new Model(_pythonInterpereter, _fileManager);
             var view = new View(_uiAdapter, _treeDir);
             var controller = new Controller(model, view);
-            return new Ide(model, view, controller);
+            return new Ide(model, view, controller, _app);
         }
     }
 }

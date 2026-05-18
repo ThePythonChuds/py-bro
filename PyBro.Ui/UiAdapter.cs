@@ -4,16 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PyBro.UI
 {
-    public class UiAdapter : IUiAdapter
+    public class UiAdapter(MainWindow window) : IUiAdapter
     {
-        private readonly MainWindow _window;
-        public UiAdapter()
-        {
-            _window = (MainWindow)System.Windows.Application.Current.MainWindow;
-        }
+        private readonly MainWindow _window = window;
 
         public string GetTextBufferContent()
         {

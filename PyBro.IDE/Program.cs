@@ -1,4 +1,5 @@
 ﻿using PyBro.Contracts;
+using PyBro.UI;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,25 +19,18 @@ namespace PyBro.IDE
         [System.STAThreadAttribute]
         public static void Main(string[] args)
         {
-           
-            string modelDllPath = Path.Combine(basePath, "PyBro.Model.dll");
+            var app = new System.Windows.Application();
+            var mainWindow = new MainWindow();
 
-            var pythonInterpreter = DynamicLoader.Load<IPythonInterpreter>(
-                modelDllPath,
-                "PyBro.PythonInterpreter"
-            );
-
-            var fileManager = DynamicLoader.Load<IFileManager>(
-                modelDllPath,
-                "PyBro.FileManager"
-            );
-
-            var app = new IdeBuilder()
-                .WithPythonInterpreter(pythonInterpreter)
-                .WithFileManager(fileManager)
+            var ide = new IdeBuilder()
+                .WithApp(app)
+                .WithPythonInterpreter(new PythonInterpreter())
+                .WithFileManager(new FileManager())
+                .WithUiAdapter(new UiAdapter(mainWindow))
+                .WithTreeDir(new TreeDir())
                 .Build();
 
-            app.Run();
+            ide.Run();
         }
     }
 }

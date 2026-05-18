@@ -19,10 +19,10 @@ namespace PyBro {
     /// Represents the main entry point of the application.
     /// This class connects the model, view, and controller, then starts the WPF interface.
     /// </summary>
-    internal class Ide(IModel model, IView view, IController controller)
+    internal class Ide(IModel model, IView view, IController controller, System.Windows.Application app)
     {
 
-        private System.Windows.Application _app = new System.Windows.Application();
+        private System.Windows.Application _app = app;
 
         private IModel _model = model;
 
@@ -42,7 +42,7 @@ namespace PyBro {
 
             this.HookControllerTick();
 
-            _app.Run(new MainWindow());
+            _app.Run();
         }
 
         /// <summary>

@@ -10,6 +10,7 @@ using PyBro.Contracts;
 using PyBro.IDE;
 using PyBro.MVC;
 using PyBro.UI;
+using System.IO;
 
 namespace PyBro.Core
 {
@@ -19,11 +20,11 @@ namespace PyBro.Core
         private static string _basePath =  AppDomain.CurrentDomain.BaseDirectory;
 
         // Numele dllurilor
-        private static string _dllCommands  = _basePath + "PyBro.Commands.dll";
-        private static string _dllContracts = _basePath + "PyBro.Contracts.dll";
-        private static string _dllIDE       = _basePath + "PyBro.IDE.dll";
-        private static string _dllMVC       = _basePath + "PyBro.MVC.dll";
-        private static string _dllUI        = _basePath + "PyBro.UI.dll";
+        private static string _dllCommands  = Path.Combine(_basePath, "PyBro.Commands.dll");
+        private static string _dllContracts = Path.Combine(_basePath, "PyBro.Contracts.dll");
+        private static string _dllIDE       = Path.Combine(_basePath, "PyBro.IDE.dll");
+        private static string _dllMVC       = Path.Combine(_basePath, "PyBro.MVC.dll");
+        private static string _dllUI        = Path.Combine(_basePath, "PyBro.UI.dll");
 
         static DependencyInjector()
         {
@@ -43,8 +44,14 @@ namespace PyBro.Core
 
         private static void LoadCommands()
         {
-            var modelCommandLoadFileClass = DynamicLoader.Load<ModelCommandLoadFile>(_dllCommands, "ModelCommandLoadFileClass");
-            RegisterDependency(ModelCommandLoadFile.GetType(), modelCommandLoadFileClass);
+            LoadDependency(_dllCommands, "PyBro.Commands.ModelCommandLoadFile");
+            LoadDependency(_dllCommands, "PyBro.Commands.ModelCommandRewriteBuffer");
+            LoadDependency(_dllCommands, "PyBro.Commands.ModelCommandRunPythonScript");
+            LoadDependency(_dllCommands, "PyBro.Commands.ModelCommandSaveBuffer");
+            LoadDependency(_dllCommands, "PyBro.Commands.ViewCommandDisplayPythonError");
+            LoadDependency(_dllCommands, "PyBro.Commands.ViewCommandRewriteActiveBuffer");
+            LoadDependency(_dllCommands, "PyBro.Commands.SendOutputToConsole");
+            LoadDependency(_dllCommands, "PyBro.Commands.UpdateTitle");
         }
 
         private static void LoadCore()
@@ -74,6 +81,10 @@ namespace PyBro.Core
                 throw new InvalidOperationException("Can not register " + key.AssemblyQualifiedName + ". Dependency is required to be of type " + key.AssemblyQualifiedName + " but type " + value.GetType().AssemblyQualifiedName + " was found!");
             }
             _dependenciesRefs[key] = value;
+        }
+
+        private static void LoadDependency(string _dllPath, string className)
+        {
         }
     }
 }
