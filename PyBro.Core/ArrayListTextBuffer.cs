@@ -86,8 +86,9 @@ namespace PyBro.Core
                     _buffer[i] = correctedLine;
                 }
 
-                if (line.Contains(":"))
-                {
+                if (line.Contains(":")) // FIXME: Filip: Daca codul python are un string
+                                        // sau comentarriu care contine ':'
+                {                       // atunci indentarea va fi gresita
                     indentLevel++;
                 }
             }

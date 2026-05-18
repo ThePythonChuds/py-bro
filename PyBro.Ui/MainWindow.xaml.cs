@@ -27,7 +27,7 @@ namespace PyBro.UI
         public MainWindow()
         {
             InitializeComponent();
-            txtEditor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinition("C#");
+            txtEditor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinition("Python");
         }
 
         /// <summary>
