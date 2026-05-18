@@ -24,7 +24,7 @@ namespace PyBro.UI
 
         public void SendCommandToModel(IModelCommand cmd)
         {
-
+            MessageQueues.SendModelCommand(cmd);
         }
 
         public void DisplayOutput(string stdout, string stderr)

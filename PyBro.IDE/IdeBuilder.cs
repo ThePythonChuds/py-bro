@@ -113,6 +113,11 @@ namespace PyBro.IDE
                 throw new InvalidOperationException("TreeDir is required to build the application.");
             }
 
+            if (_mainWindow == null)
+            {
+                throw new InvalidOperationException("MainWindow is required to build the application.");
+            }
+
             var model = new Model(_pythonInterpereter, _fileManager);
             var view = new View(_uiAdapter, _treeDir);
             var controller = new Controller(model, view);

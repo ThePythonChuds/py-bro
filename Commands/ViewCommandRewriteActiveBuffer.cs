@@ -23,7 +23,6 @@ namespace PyBro.Commands
         {
             ValidateArgs(args);
             ((IUiAdapter)args[0]).UpdateBuffer(_bufferContent);
-            throw new NotImplementedException(); // TODO: implement this command to rewrite the editor buffer with the provided content. This will be used for loading files and for updating the buffer after running code.
         }
 
         private void ValidateArgs(object[] args)

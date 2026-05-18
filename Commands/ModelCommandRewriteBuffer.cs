@@ -23,6 +23,11 @@ namespace PyBro.Commands
         {
             ValidateArgs(args);
             var dict = ((Dictionary<string, ITextBuffer>)args[0]);
+
+            if (!dict.ContainsKey(_path))
+            {
+                dict[_path] = new ArrayListTextBuffer();
+            }
             dict[_path].SetContent(_content);
         }
 

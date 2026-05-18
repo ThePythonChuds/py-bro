@@ -76,8 +76,11 @@ namespace PyBro.UI
                 }
             }
 
-            var sbc = new ModelCommandSaveBuffer(path, script);
-            MessageQueues.SendModelCommand(sbc);
+            if (path != null)
+            {
+                var sbc = new ModelCommandSaveBuffer(path, script);
+                MessageQueues.SendModelCommand(sbc);
+            }
         }
 
 

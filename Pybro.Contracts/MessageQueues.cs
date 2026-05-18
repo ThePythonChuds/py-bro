@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,8 @@ namespace PyBro.Contracts
 {
     public class MessageQueues
     {
-        private static readonly Queue<IModelCommand> _viewToModelCommandQueue = new Queue<IModelCommand>();
-        private static readonly Queue<IViewCommand> _modelToViewCommandQueue = new Queue<IViewCommand>();
+        private static readonly ConcurrentQueue<IModelCommand> _viewToModelCommandQueue = new ConcurrentQueue<IModelCommand>();
+        private static readonly ConcurrentQueue<IViewCommand> _modelToViewCommandQueue = new ConcurrentQueue<IViewCommand>();
 
         public static void SendModelCommand(IModelCommand cmd)
         {

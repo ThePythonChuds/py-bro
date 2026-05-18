@@ -37,8 +37,8 @@ namespace PyBro.IDE {
         [System.STAThreadAttribute]
         public void Run()
         {
-            _app.Run();
             this.HookControllerTick();
+            _app.Run(_app);
         }
 
         /// <summary>
