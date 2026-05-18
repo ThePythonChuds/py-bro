@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PyBro
+namespace PyBro.Contracts
 {
-    public interface ICommand
+    public interface ICommandMessageQueueListener
     {
-        public void Execute(object[] args);
+        void ExecuteCommands();
     }
 }

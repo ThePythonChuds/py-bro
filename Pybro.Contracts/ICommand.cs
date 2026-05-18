@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PyBro
+namespace PyBro.Contracts
 {
-    public class ModelToViewCommandQueue : CommandQueue<ModelCommand>
+    public interface ICommand
     {
-
+        public void Execute(object[] args);
     }
 }

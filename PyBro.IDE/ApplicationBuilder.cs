@@ -13,6 +13,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PyBro.Contracts;
+using PyBro.MVC;
 
 namespace PyBro
 {
@@ -23,13 +25,8 @@ namespace PyBro
     /// </summary>
     class ApplicationBuilder
     {
-        private IPythonInterpreter? _pi = null;
-        private IFileManager? _fm = null;
 
-        public ApplicationBuilder()
-        {
-
-        }
+        private IPythonInterpreter? pythonInterpereter = null;
 
         /// <summary>
         /// Sets the Python interpreter dependency required by the application.
@@ -38,9 +35,12 @@ namespace PyBro
         /// <returns>The current builder instance, allowing chained method calls.</returns>
         public ApplicationBuilder WithPythonInterpreter(IPythonInterpreter pi)
         {
-            _pi = pi;
+            pythonInterpereter = pi;
             return this;
         }
+
+
+        private IFileManager? fileManager = null;
 
         /// <summary>
         /// Sets the file manager dependency required by the application.
@@ -49,7 +49,23 @@ namespace PyBro
         /// <returns>The current builder instance, allowing chained method calls.</returns>
         public ApplicationBuilder WithFileManager(IFileManager fm)
         {
-            _fm = fm;
+            fileManager = fm;
+            return this;
+        }
+
+        private IUiAdapter? _uiAdapter = null;
+
+        public ApplicationBuilder WithUiAdapter(IUiAdapter uiAdapter)
+        {
+            _uiAdapter = uiAdapter;
+            return this;
+        }
+
+        private ITreeDir? _treeDir = null;
+
+        public ApplicationBuilder WithTreeDir(ITreeDir treeDir)
+        {
+            _treeDir = treeDir;
             return this;
         }
 
@@ -62,17 +78,18 @@ namespace PyBro
         /// </exception>
         public Application Build()
         {
-            if (_pi == null)
+            if (pythonInterpereter == null)
             {
                 throw new InvalidOperationException("PythonInterpreter is required to build the application.");
             }
-            if (_fm == null)
+            if (fileManager == null)
             {
                 throw new InvalidOperationException("FileManager is required to build the application.");
             }
+            // TODO: Add checks for other dependencies like _uiAdapter and _treeDir if they are required for the application to function properly.
 
-            var model = new Model(_pi, _fm);
-            var view = new View();
+            var model = new Model(pythonInterpereter, fileManager);
+            var view = new View(_uiAdapter, _treeDir);
             var controller = new Controller(model, view);
             return new Application(model, view, controller);
         }

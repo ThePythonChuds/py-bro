@@ -1,7 +1,6 @@
 ﻿using ICSharpCode.AvalonEdit;
 using ICSharpCode.AvalonEdit.Highlighting;
 using Microsoft.Win32;
-using Mono.Unix;
 using PyBro;
 using System;
 using System.Collections.Generic;
@@ -17,14 +16,14 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static IronPython.Modules._ast;
+using PyBro.Commands;
+using PyBro.Contracts;
 
 namespace PyBro.UI
 {
     public partial class MainWindow : Window
     {
         public string? CurrentFile { get; private set; } = null;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -35,7 +34,7 @@ namespace PyBro.UI
         /// Retrieves the entire current text content from the editor.
         /// </summary>
         /// <returns>A string representing the source code in the editor.</returns>
-        public string GetBuffer()
+        public string GetTextBufferContent()
         {
             return txtEditor.Text;
         }
@@ -46,33 +45,24 @@ namespace PyBro.UI
         /// </summary>
         private void btnRun_Click(object sender, RoutedEventArgs e)
         {
-            FileManager fileManager = new FileManager();
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Python files (*.py)|*.py|All files (*.*)|*.*";
             saveFileDialog.DefaultExt = ".py";
             saveFileDialog.AddExtension = true;
 
-            string runScript = txtEditor.Text;
+            string script = txtEditor.Text;
             string path = null;
 
-            if (string.IsNullOrWhiteSpace(runScript))
+            if (string.IsNullOrWhiteSpace(script))
             {
-                txtConsole.Text = "Scrie cod!"; 
+                txtConsole.Text = "No code to run. Maybe you wanna print some hello worlds?"; 
                 return;
             }
 
-            var interpreter = new PyBro.PythonInterpreter();
-            (string output, string error) = interpreter.RunScript(runScript);
-            txtConsole.Clear();
 
-            if (!string.IsNullOrEmpty(error))
-            {
-                txtConsole.AppendText(error);
-            }
-            else
-            {
-                txtConsole.AppendText(output);
-            }
+            var cmd = new ModelCommandRunPythonScript(script);
+            MessageQueues.SendModelCommand(cmd);
+
 
             if (CurrentFile != null)
                 path = CurrentFile;
@@ -85,7 +75,9 @@ namespace PyBro.UI
                     CurrentFile = saveFileDialog.FileName;
                 }
             }
-            fileManager.SaveBuffer(path, runScript);
+
+            var sbc = new ModelCommandSaveBuffer(path, script);
+            MessageQueues.SendModelCommand(sbc);
         }
 
 
@@ -96,17 +88,16 @@ namespace PyBro.UI
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             bool? result = fileDialog.ShowDialog();
-            FileManager fileManager = new FileManager();
 
             if (result == true)
             {
                 try
                 {
-                    string loadedScript;
                     string filePath = fileDialog.FileName;
                     CurrentFile = filePath;
-                    loadedScript = fileManager.GetFileContent(filePath);
-                    txtEditor.Text = loadedScript;
+
+                    var cmd = new ModelCommandLoadFile(filePath);
+                    MessageQueues.SendModelCommand(cmd);
                 }
                 catch (FileException ex)
                 {
@@ -130,7 +121,6 @@ namespace PyBro.UI
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            FileManager fileManager = new FileManager();
             saveFileDialog.Filter = "Python files (*.py)|*.py|All files (*.*)|*.*";
             saveFileDialog.DefaultExt = ".py";
             saveFileDialog.AddExtension = true;
@@ -152,16 +142,8 @@ namespace PyBro.UI
                     return;
             }
 
-            try
-            {
-
-                fileManager.SaveBuffer(CurrentFile, scriptToSave);
-                txtConsole.AppendText("\n[INFO] Salvare reușită.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Save error: " + ex.Message);
-            }
+            var modelCmd = new ModelCommandSaveBuffer(path, scriptToSave);
+            MessageQueues.SendModelCommand(modelCmd);
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -227,10 +209,9 @@ namespace PyBro.UI
             {
                 try
                 {
-                    FileManager fm = new FileManager();
-                    txtEditor.Text = fm.GetFileContent(selectedItem.Path);
-                    CurrentFile = selectedItem.Path;
-                    this.Title = $"PyBro - {selectedItem.Name}";
+                    var modelCmd = new ModelCommandLoadFile(selectedItem.Path);
+                    MessageQueues.SendModelCommand(modelCmd);
+
                 }
                 catch (Exception ex)
                 {
@@ -269,9 +250,37 @@ namespace PyBro.UI
         {
 
         }
-        public void UpdateBuffer(string bufferContent)
+
+        internal void SetTextBufferContent(string bufferContent)
         {
             txtEditor.Text = bufferContent;
+        }
+
+        internal void DisplayOutput(string stdout, string stderr)
+        {
+            txtConsole.Clear();
+
+            if (!string.IsNullOrEmpty(stderr))
+            {
+                txtConsole.AppendText(stderr);
+            }
+            else
+            {
+                txtConsole.AppendText(stdout);
+            }
+        }
+
+        internal void DisplayError(string errorMessage)
+        {
+            // Filip: O alta idee ar fi sa avem un TextBlock separat pentru erori, care sa aiba textul rosu, iar txtConsole sa fie doar pentru output normal. In felul asta nu amestecam erorile cu outputul normal si e mai usor de citit.
+            // F: mi se pare asa crazy ca stie ai-ul din visual studio si ce vreau sa transmit prin mesaj.. Future is scary
+            txtConsole.Clear();
+            txtConsole.AppendText("\n[ERROR] " + errorMessage);
+        }
+
+        internal void UpdateTitle(string newTitle)
+        {
+            this.Title = newTitle;
         }
     }
 }

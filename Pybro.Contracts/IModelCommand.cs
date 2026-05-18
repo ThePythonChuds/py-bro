@@ -1,10 +1,7 @@
 
 namespace PyBro.Contracts
 {
-    public interface IPyBroViewCommand
+    public interface IModelCommand : ICommand
     {
-        void Execute(IUi ui, ITreeDir treeDir);
     }
 }
-
-

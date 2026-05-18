@@ -13,15 +13,8 @@ namespace PyBro.Contracts
     /// <summary>
     /// Defines the behavior required for the model component of the application.
     /// </summary>
-    public interface IModel
+    public interface IModel : ICommandMessageQueueListener
     {
-        /// <summary>
-        /// Processes information received from the view during one application update.
-        /// </summary>
-        /// <param name="tickInfo">The information collected from the view during the current tick.</param>
-        /// <returns>The information that should be sent back to the view.</returns>
-        ModelTickInfo ApplyTickInfo(ViewTickInfo tickInfo);
-
         /// <summary>
         /// Adds a text buffer and associates it with a file name.
         /// </summary>

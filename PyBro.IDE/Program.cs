@@ -10,6 +10,7 @@
 
 using System.IO;
 using PyBro;
+using PyBro.Contracts;
 
 class Program
 {

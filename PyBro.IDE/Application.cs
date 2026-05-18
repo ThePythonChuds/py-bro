@@ -13,6 +13,8 @@ using System.Windows.Automation.Peers;
 using System.Windows.Threading;
 
 using PyBro.Contracts;
+using PyBro.UI;
+
 namespace PyBro {
 
     /// <summary>
@@ -42,7 +44,7 @@ namespace PyBro {
 
             this.HookControllerTick();
 
-            _app.Run(new PyBro.Ui.MainWindow());
+            _app.Run(new MainWindow());
         }
 
         /// <summary>
@@ -56,10 +58,7 @@ namespace PyBro {
             timer.Interval = new TimeSpan(0, 0, 0, 0, 16); // NOTE: Tickurile de update se aplica la intervale de 16ms
 
             timer.Tick += (_, _) => {
-                _isRunning = _controller.Tick();
-                if (!_isRunning) {
-                    _app.Shutdown();
-                }
+                _controller.Tick();
             };
 
             timer.Start();

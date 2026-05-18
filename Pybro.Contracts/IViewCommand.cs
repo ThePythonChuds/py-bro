@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PyBro
+namespace PyBro.Contracts
 {
-    public interface IController
+    public interface IViewCommand : ICommand
     {
-        void Tick();
     }
 }
