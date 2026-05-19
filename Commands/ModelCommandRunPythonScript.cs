@@ -28,7 +28,7 @@ namespace PyBro.Commands
                 }
                 catch (PythonException pe)
                 {
-                    var cmd = new ViewCommandDisplayPythonError(pe.Message);
+                    var cmd = new ViewCommandDisplayPythonError("Error running your script");
                     MessageQueues.SendViewCommand(cmd);
                 }
             }

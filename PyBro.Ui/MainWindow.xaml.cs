@@ -1,5 +1,4 @@
 ﻿using ICSharpCode.AvalonEdit;
-using ICSharpCode.AvalonEdit.Highlighting;
 using Microsoft.Win32;
 using PyBro;
 using System;
@@ -18,6 +17,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PyBro.Commands;
 using PyBro.Contracts;
+using System.Xml;
+using ICSharpCode.AvalonEdit.Highlighting;
+using ICSharpCode.AvalonEdit.Highlighting.Xshd;
+using System.Reflection;
 
 namespace PyBro.UI
 {
@@ -27,7 +30,22 @@ namespace PyBro.UI
         public MainWindow()
         {
             InitializeComponent();
-            txtEditor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinition("Python");
+            var assembly = Assembly.GetExecutingAssembly();
+            var file = "PyBro.UI.PyBroTheme.xshd";
+            using (Stream s = assembly.GetManifestResourceStream("PyBro.UI.PyBroTheme.xshd"))
+            {
+                if (s != null)
+                {
+                    using (XmlTextReader reader = new XmlTextReader(s))
+                    {
+                        txtEditor.SyntaxHighlighting = HighlightingLoader.Load(reader, HighlightingManager.Instance);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Nu am putut găsi fișierul " + file + ". Ai pus Build Action pe Embedded Resource?");
+                }
+            }
         }
 
         /// <summary>

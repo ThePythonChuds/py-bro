@@ -48,13 +48,7 @@ namespace PyBro
                 string errText = new StreamReader(stderr).ReadToEnd();
 
                 return (outText, errText);
-            } catch (IronPython.Runtime.Exceptions.RuntimeException ironPythonException) {
-                throw new Exception("IronPython Runtime Exception: " + ironPythonException.Message);
             } catch {
-                // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                // !!!: Filip: DACA VEZI ASTA, AMINTESTE-I LUI BELIGAN CA TREBUIE SA AFISAM SI O EROARE PT USER IN CAZ CA SCRIPTUL PYTHON NU POATE RULA! MERCI!
-
-                System.Console.WriteLine("Error: PythonInterpreter.RunScript()");
                 throw new PythonException("Error while trying to run the python script!");
             }
         }
