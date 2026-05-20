@@ -1,0 +1,74 @@
+\doxysection{Py\+Bro.\+Contracts.\+IPython\+Interpreter Interface Reference}
+\hypertarget{interfacePyBro_1_1Contracts_1_1IPythonInterpreter}{}\label{interfacePyBro_1_1Contracts_1_1IPythonInterpreter}\index{PyBro.Contracts.IPythonInterpreter@{PyBro.Contracts.IPythonInterpreter}}
+
+
+Defines the behavior required for a Python interpreter component.  
+
+
+Inheritance diagram for Py\+Bro.\+Contracts.\+IPython\+Interpreter:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfacePyBro_1_1Contracts_1_1IPythonInterpreter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IPythonInterpreter_a5d3117dfa6053924b91616865b8cc419}{string}} \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IPythonInterpreter_aec7f5b7de88b4cde6d65531630b03288}{Run\+Script}} (\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IPythonInterpreter_a5d3117dfa6053924b91616865b8cc419}{string}} script)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IPythonInterpreter_a5d3117dfa6053924b91616865b8cc419}{string}}
+\begin{DoxyCompactList}\small\item\em Executes a Python script and returns the execution output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the behavior required for a Python interpreter component. 
+
+\label{doc-func-members}
+\Hypertarget{interfacePyBro_1_1Contracts_1_1IPythonInterpreter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfacePyBro_1_1Contracts_1_1IPythonInterpreter_aec7f5b7de88b4cde6d65531630b03288}\index{PyBro.Contracts.IPythonInterpreter@{PyBro.Contracts.IPythonInterpreter}!RunScript@{RunScript}}
+\index{RunScript@{RunScript}!PyBro.Contracts.IPythonInterpreter@{PyBro.Contracts.IPythonInterpreter}}
+\doxysubsubsection{\texorpdfstring{RunScript()}{RunScript()}}
+{\footnotesize\ttfamily \label{interfacePyBro_1_1Contracts_1_1IPythonInterpreter_aec7f5b7de88b4cde6d65531630b03288} 
+\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IPythonInterpreter_a5d3117dfa6053924b91616865b8cc419}{string}} Py\+Bro.\+Contracts.\+IPython\+Interpreter.\+Run\+Script (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IPythonInterpreter_a5d3117dfa6053924b91616865b8cc419}{string}}}]{script}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \doxymbox{\hyperlink{classPyBro_1_1PythonInterpreter_ab7f4f85f96e8472fb1a6b8380a00a80a}{Py\+Bro.\+Python\+Interpreter}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{interfacePyBro_1_1Contracts_1_1IPythonInterpreter_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{interfacePyBro_1_1Contracts_1_1IPythonInterpreter_a5d3117dfa6053924b91616865b8cc419}\index{PyBro.Contracts.IPythonInterpreter@{PyBro.Contracts.IPythonInterpreter}!string@{string}}
+\index{string@{string}!PyBro.Contracts.IPythonInterpreter@{PyBro.Contracts.IPythonInterpreter}}
+\doxysubsubsection{\texorpdfstring{string}{string}}
+{\footnotesize\ttfamily \label{interfacePyBro_1_1Contracts_1_1IPythonInterpreter_a5d3117dfa6053924b91616865b8cc419} 
+Py\+Bro.\+Contracts.\+IPython\+Interpreter.\+string}
+
+
+
+Executes a Python script and returns the execution output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em script} & The Python script that should be executed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple containing the standard output and the error output produced by the script. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classPyBro_1_1PythonException}{Python\+Exception}} & Thrown when an error occurs during Python script execution. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this interface was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Pybro.\+Contracts/\+\doxymbox{\hyperlink{IPythonInterpreter_8cs}{IPython\+Interpreter.\+cs}}\end{DoxyCompactItemize}

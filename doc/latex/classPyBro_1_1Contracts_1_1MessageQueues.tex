@@ -1,0 +1,71 @@
+\doxysection{Py\+Bro.\+Contracts.\+Message\+Queues Class Reference}
+\hypertarget{classPyBro_1_1Contracts_1_1MessageQueues}{}\label{classPyBro_1_1Contracts_1_1MessageQueues}\index{PyBro.Contracts.MessageQueues@{PyBro.Contracts.MessageQueues}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{classPyBro_1_1Contracts_1_1MessageQueues_a76b815afc5c25e64f70de32ca48debd1}{Send\+Model\+Command}} (\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IModelCommand}{IModel\+Command}} cmd)
+\item 
+static ? \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IModelCommand}{IModel\+Command}} \doxymbox{\hyperlink{classPyBro_1_1Contracts_1_1MessageQueues_ac18c8c18a17be38b816bc09e0c259d04}{Receive\+Model\+Command}} ()
+\item 
+static void \doxymbox{\hyperlink{classPyBro_1_1Contracts_1_1MessageQueues_ad0822b9a8e6594f537f30071b95a348e}{Send\+View\+Command}} (\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IViewCommand}{IView\+Command}} cmd)
+\item 
+static ? \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IViewCommand}{IView\+Command}} \doxymbox{\hyperlink{classPyBro_1_1Contracts_1_1MessageQueues_ab286b4916fe998dbfd6aa59c964aa612}{Receive\+View\+Command}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static readonly Concurrent\+Queue$<$ \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IModelCommand}{IModel\+Command}} $>$ \doxymbox{\hyperlink{classPyBro_1_1Contracts_1_1MessageQueues_a132dd04d72b9a06c95bc6437383faa47}{\+\_\+view\+To\+Model\+Command\+Queue}} = new Concurrent\+Queue$<$\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IModelCommand}{IModel\+Command}}$>$()
+\item 
+static readonly Concurrent\+Queue$<$ \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IViewCommand}{IView\+Command}} $>$ \doxymbox{\hyperlink{classPyBro_1_1Contracts_1_1MessageQueues_ac538076524fcacd4326fca590e6c657e}{\+\_\+model\+To\+View\+Command\+Queue}} = new Concurrent\+Queue$<$\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IViewCommand}{IView\+Command}}$>$()
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classPyBro_1_1Contracts_1_1MessageQueues_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPyBro_1_1Contracts_1_1MessageQueues_ac18c8c18a17be38b816bc09e0c259d04}\index{PyBro.Contracts.MessageQueues@{PyBro.Contracts.MessageQueues}!ReceiveModelCommand@{ReceiveModelCommand}}
+\index{ReceiveModelCommand@{ReceiveModelCommand}!PyBro.Contracts.MessageQueues@{PyBro.Contracts.MessageQueues}}
+\doxysubsubsection{\texorpdfstring{ReceiveModelCommand()}{ReceiveModelCommand()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Contracts_1_1MessageQueues_ac18c8c18a17be38b816bc09e0c259d04} 
+? \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IModelCommand}{IModel\+Command}} Py\+Bro.\+Contracts.\+Message\+Queues.\+Receive\+Model\+Command (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classPyBro_1_1Contracts_1_1MessageQueues_ab286b4916fe998dbfd6aa59c964aa612}\index{PyBro.Contracts.MessageQueues@{PyBro.Contracts.MessageQueues}!ReceiveViewCommand@{ReceiveViewCommand}}
+\index{ReceiveViewCommand@{ReceiveViewCommand}!PyBro.Contracts.MessageQueues@{PyBro.Contracts.MessageQueues}}
+\doxysubsubsection{\texorpdfstring{ReceiveViewCommand()}{ReceiveViewCommand()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Contracts_1_1MessageQueues_ab286b4916fe998dbfd6aa59c964aa612} 
+? \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IViewCommand}{IView\+Command}} Py\+Bro.\+Contracts.\+Message\+Queues.\+Receive\+View\+Command (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classPyBro_1_1Contracts_1_1MessageQueues_a76b815afc5c25e64f70de32ca48debd1}\index{PyBro.Contracts.MessageQueues@{PyBro.Contracts.MessageQueues}!SendModelCommand@{SendModelCommand}}
+\index{SendModelCommand@{SendModelCommand}!PyBro.Contracts.MessageQueues@{PyBro.Contracts.MessageQueues}}
+\doxysubsubsection{\texorpdfstring{SendModelCommand()}{SendModelCommand()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Contracts_1_1MessageQueues_a76b815afc5c25e64f70de32ca48debd1} 
+void Py\+Bro.\+Contracts.\+Message\+Queues.\+Send\+Model\+Command (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IModelCommand}{IModel\+Command}}}]{cmd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classPyBro_1_1Contracts_1_1MessageQueues_ad0822b9a8e6594f537f30071b95a348e}\index{PyBro.Contracts.MessageQueues@{PyBro.Contracts.MessageQueues}!SendViewCommand@{SendViewCommand}}
+\index{SendViewCommand@{SendViewCommand}!PyBro.Contracts.MessageQueues@{PyBro.Contracts.MessageQueues}}
+\doxysubsubsection{\texorpdfstring{SendViewCommand()}{SendViewCommand()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Contracts_1_1MessageQueues_ad0822b9a8e6594f537f30071b95a348e} 
+void Py\+Bro.\+Contracts.\+Message\+Queues.\+Send\+View\+Command (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IViewCommand}{IView\+Command}}}]{cmd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classPyBro_1_1Contracts_1_1MessageQueues_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPyBro_1_1Contracts_1_1MessageQueues_ac538076524fcacd4326fca590e6c657e}\index{PyBro.Contracts.MessageQueues@{PyBro.Contracts.MessageQueues}!\_modelToViewCommandQueue@{\_modelToViewCommandQueue}}
+\index{\_modelToViewCommandQueue@{\_modelToViewCommandQueue}!PyBro.Contracts.MessageQueues@{PyBro.Contracts.MessageQueues}}
+\doxysubsubsection{\texorpdfstring{\_modelToViewCommandQueue}{\_modelToViewCommandQueue}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Contracts_1_1MessageQueues_ac538076524fcacd4326fca590e6c657e} 
+readonly Concurrent\+Queue$<$\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IViewCommand}{IView\+Command}}$>$ Py\+Bro.\+Contracts.\+Message\+Queues.\+\_\+model\+To\+View\+Command\+Queue = new Concurrent\+Queue$<$\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IViewCommand}{IView\+Command}}$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{classPyBro_1_1Contracts_1_1MessageQueues_a132dd04d72b9a06c95bc6437383faa47}\index{PyBro.Contracts.MessageQueues@{PyBro.Contracts.MessageQueues}!\_viewToModelCommandQueue@{\_viewToModelCommandQueue}}
+\index{\_viewToModelCommandQueue@{\_viewToModelCommandQueue}!PyBro.Contracts.MessageQueues@{PyBro.Contracts.MessageQueues}}
+\doxysubsubsection{\texorpdfstring{\_viewToModelCommandQueue}{\_viewToModelCommandQueue}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Contracts_1_1MessageQueues_a132dd04d72b9a06c95bc6437383faa47} 
+readonly Concurrent\+Queue$<$\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IModelCommand}{IModel\+Command}}$>$ Py\+Bro.\+Contracts.\+Message\+Queues.\+\_\+view\+To\+Model\+Command\+Queue = new Concurrent\+Queue$<$\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IModelCommand}{IModel\+Command}}$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Pybro.\+Contracts/\+\doxymbox{\hyperlink{MessageQueues_8cs}{Message\+Queues.\+cs}}\end{DoxyCompactItemize}

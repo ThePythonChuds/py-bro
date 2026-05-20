@@ -1,0 +1,95 @@
+\doxysection{Py\+Bro.\+File\+Item Class Reference}
+\hypertarget{classPyBro_1_1FileItem}{}\label{classPyBro_1_1FileItem}\index{PyBro.FileItem@{PyBro.FileItem}}
+
+
+Represents a file system item displayed in the file explorer. The item can be either a file or a directory and may contain child items.  
+
+
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{classPyBro_1_1FileItem_ab09e4f7f5db043a7ca7391a50143e32b}{Name}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\begin{DoxyCompactList}\small\item\em Gets or sets the display name of the file or directory. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{classPyBro_1_1FileItem_aedf34f3822181dc494de5d65b0e64997}{Path}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\begin{DoxyCompactList}\small\item\em Gets or sets the full path of the file or directory. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{classPyBro_1_1FileItem_aea7e947588bfbe9ab0ff16dfd2fe5ad6}{Icon\+Kind}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\begin{DoxyCompactList}\small\item\em Gets or sets the icon type used to visually represent this item. \end{DoxyCompactList}\item 
+Brush \doxymbox{\hyperlink{classPyBro_1_1FileItem_a86ebb3f3714b9351dbbe8805278ddf05}{Icon\+Color}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\begin{DoxyCompactList}\small\item\em Gets or sets the color of the displayed icon. \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{classPyBro_1_1FileItem}{File\+Item}} $>$ \doxymbox{\hyperlink{classPyBro_1_1FileItem_a0162201dbd6a542c9820f7a01bfa68bf}{Children}} = new List$<$\doxymbox{\hyperlink{classPyBro_1_1FileItem}{File\+Item}}$>$()\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\begin{DoxyCompactList}\small\item\em Gets or sets the child items contained by this item. This is mainly used when the item represents a directory. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classPyBro_1_1FileItem_a569d0dff8d472da56575e66a1e5c1b3a}{Is\+Directory}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\begin{DoxyCompactList}\small\item\em Indicates whether the current item represents a directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a file system item displayed in the file explorer. The item can be either a file or a directory and may contain child items. 
+
+\label{doc-property-members}
+\Hypertarget{classPyBro_1_1FileItem_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{classPyBro_1_1FileItem_a0162201dbd6a542c9820f7a01bfa68bf}\index{PyBro.FileItem@{PyBro.FileItem}!Children@{Children}}
+\index{Children@{Children}!PyBro.FileItem@{PyBro.FileItem}}
+\doxysubsubsection{\texorpdfstring{Children}{Children}}
+{\footnotesize\ttfamily \label{classPyBro_1_1FileItem_a0162201dbd6a542c9820f7a01bfa68bf} 
+List$<$\doxymbox{\hyperlink{classPyBro_1_1FileItem}{File\+Item}}$>$ Py\+Bro.\+File\+Item.\+Children = new List$<$\doxymbox{\hyperlink{classPyBro_1_1FileItem}{File\+Item}}$>$()\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the child items contained by this item. This is mainly used when the item represents a directory. 
+
+\Hypertarget{classPyBro_1_1FileItem_a86ebb3f3714b9351dbbe8805278ddf05}\index{PyBro.FileItem@{PyBro.FileItem}!IconColor@{IconColor}}
+\index{IconColor@{IconColor}!PyBro.FileItem@{PyBro.FileItem}}
+\doxysubsubsection{\texorpdfstring{IconColor}{IconColor}}
+{\footnotesize\ttfamily \label{classPyBro_1_1FileItem_a86ebb3f3714b9351dbbe8805278ddf05} 
+Brush Py\+Bro.\+File\+Item.\+Icon\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the color of the displayed icon. 
+
+\Hypertarget{classPyBro_1_1FileItem_aea7e947588bfbe9ab0ff16dfd2fe5ad6}\index{PyBro.FileItem@{PyBro.FileItem}!IconKind@{IconKind}}
+\index{IconKind@{IconKind}!PyBro.FileItem@{PyBro.FileItem}}
+\doxysubsubsection{\texorpdfstring{IconKind}{IconKind}}
+{\footnotesize\ttfamily \label{classPyBro_1_1FileItem_aea7e947588bfbe9ab0ff16dfd2fe5ad6} 
+string Py\+Bro.\+File\+Item.\+Icon\+Kind\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the icon type used to visually represent this item. 
+
+\Hypertarget{classPyBro_1_1FileItem_a569d0dff8d472da56575e66a1e5c1b3a}\index{PyBro.FileItem@{PyBro.FileItem}!IsDirectory@{IsDirectory}}
+\index{IsDirectory@{IsDirectory}!PyBro.FileItem@{PyBro.FileItem}}
+\doxysubsubsection{\texorpdfstring{IsDirectory}{IsDirectory}}
+{\footnotesize\ttfamily \label{classPyBro_1_1FileItem_a569d0dff8d472da56575e66a1e5c1b3a} 
+bool Py\+Bro.\+File\+Item.\+Is\+Directory\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Indicates whether the current item represents a directory. 
+
+\Hypertarget{classPyBro_1_1FileItem_ab09e4f7f5db043a7ca7391a50143e32b}\index{PyBro.FileItem@{PyBro.FileItem}!Name@{Name}}
+\index{Name@{Name}!PyBro.FileItem@{PyBro.FileItem}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily \label{classPyBro_1_1FileItem_ab09e4f7f5db043a7ca7391a50143e32b} 
+string Py\+Bro.\+File\+Item.\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the display name of the file or directory. 
+
+\Hypertarget{classPyBro_1_1FileItem_aedf34f3822181dc494de5d65b0e64997}\index{PyBro.FileItem@{PyBro.FileItem}!Path@{Path}}
+\index{Path@{Path}!PyBro.FileItem@{PyBro.FileItem}}
+\doxysubsubsection{\texorpdfstring{Path}{Path}}
+{\footnotesize\ttfamily \label{classPyBro_1_1FileItem_aedf34f3822181dc494de5d65b0e64997} 
+string Py\+Bro.\+File\+Item.\+Path\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the full path of the file or directory. 
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Py\+Bro.\+Ui/\+\doxymbox{\hyperlink{FileItem_8cs}{File\+Item.\+cs}}\end{DoxyCompactItemize}

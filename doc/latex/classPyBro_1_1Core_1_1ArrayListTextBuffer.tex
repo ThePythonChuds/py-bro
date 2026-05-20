@@ -1,0 +1,206 @@
+\doxysection{Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer Class Reference}
+\hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer}{}\label{classPyBro_1_1Core_1_1ArrayListTextBuffer}\index{PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}}
+
+
+Implements a text buffer using a list of strings, where each element represents one line from the editor.  
+
+
+Inheritance diagram for Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPyBro_1_1Core_1_1ArrayListTextBuffer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_a202c31f85ec71b37334b403a45365ad5}{Array\+List\+Text\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Creates an empty text buffer. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_a873c86fed472aea557cbb3839fc29d28}{Add\+Line}} (string line)
+\begin{DoxyCompactList}\small\item\em Adds a new line to the text buffer. If the line ends with a newline character, it is removed before storing. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_a026c038702810631e1f151ed0d53aa9c}{Get\+Content}} ()
+\begin{DoxyCompactList}\small\item\em Returns the entire content of the buffer as a single string. \end{DoxyCompactList}\item 
+string? \doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_a4d062956a65ca267bed332952ee932b4}{Get\+Current\+Indent\+Info}} ()
+\item 
+void \doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_a37a64100759c9a28c868bac172ef2e9e}{Set\+Content}} (string content)
+\begin{DoxyCompactList}\small\item\em Replaces the current buffer content with the provided text. The text is split into separate lines before being stored. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_a8e89d685cf684eda5d1ac0f5660ebc75}{Autoindent}} ()
+\begin{DoxyCompactList}\small\item\em Automatically applies indentation to the last empty line in the buffer, based on the current indentation level. \end{DoxyCompactList}\item 
+override int \doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_a538198ec60af45a385a76d057cbb50b9}{Get\+Hash\+Code}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_a14ab3db91cdf434903377d07f542ceb6}{uint}}
+\begin{DoxyCompactList}\small\item\em Calculates the current indentation level and detects the indentation string used inside the buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer}{Py\+Bro.\+Contracts.\+IText\+Buffer}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer_a94fbee70a884fdb75cc0082444d6aa5f}{UInt32}}
+\begin{DoxyCompactList}\small\item\em Returns information about the current indentation level and indentation string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ string $>$ \doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_a68a4261061422a2a2ef15c8ea1869556}{\+\_\+buffer}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_aec9462f8b84506f1cb4f805703c8f863}{Should\+Increment\+Indentation}} (in string line)
+\item 
+static string \doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_a7658a103458f84b2098b22e604fe1b9f}{Get\+Indent\+String}} (string line)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements a text buffer using a list of strings, where each element represents one line from the editor. 
+
+\label{doc-constructors}
+\Hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer_a202c31f85ec71b37334b403a45365ad5}\index{PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}!ArrayListTextBuffer@{ArrayListTextBuffer}}
+\index{ArrayListTextBuffer@{ArrayListTextBuffer}!PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}}
+\doxysubsubsection{\texorpdfstring{ArrayListTextBuffer()}{ArrayListTextBuffer()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Core_1_1ArrayListTextBuffer_a202c31f85ec71b37334b403a45365ad5} 
+Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer.\+Array\+List\+Text\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates an empty text buffer. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer_a873c86fed472aea557cbb3839fc29d28}\index{PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}!AddLine@{AddLine}}
+\index{AddLine@{AddLine}!PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}}
+\doxysubsubsection{\texorpdfstring{AddLine()}{AddLine()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Core_1_1ArrayListTextBuffer_a873c86fed472aea557cbb3839fc29d28} 
+void Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer.\+Add\+Line (\begin{DoxyParamCaption}\item[{string}]{line}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a new line to the text buffer. If the line ends with a newline character, it is removed before storing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & The line that will be added to the buffer.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer_aeae041b04d1ca672a2fd64907cb9b9eb}{Py\+Bro.\+Contracts.\+IText\+Buffer}}.
+
+\Hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer_a8e89d685cf684eda5d1ac0f5660ebc75}\index{PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}!Autoindent@{Autoindent}}
+\index{Autoindent@{Autoindent}!PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}}
+\doxysubsubsection{\texorpdfstring{Autoindent()}{Autoindent()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Core_1_1ArrayListTextBuffer_a8e89d685cf684eda5d1ac0f5660ebc75} 
+void Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer.\+Autoindent (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Automatically applies indentation to the last empty line in the buffer, based on the current indentation level. 
+
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer_ad4a90a99fa757aed80219c3709719f74}{Py\+Bro.\+Contracts.\+IText\+Buffer}}.
+
+\Hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer_a026c038702810631e1f151ed0d53aa9c}\index{PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}!GetContent@{GetContent}}
+\index{GetContent@{GetContent}!PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}}
+\doxysubsubsection{\texorpdfstring{GetContent()}{GetContent()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Core_1_1ArrayListTextBuffer_a026c038702810631e1f151ed0d53aa9c} 
+string Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer.\+Get\+Content (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the entire content of the buffer as a single string. 
+
+\begin{DoxyReturn}{Returns}
+The complete text stored in the buffer.
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer_abe82174d1ed9bd4be9746d5ca2bde48e}{Py\+Bro.\+Contracts.\+IText\+Buffer}}.
+
+\Hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer_a4d062956a65ca267bed332952ee932b4}\index{PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}!GetCurrentIndentInfo@{GetCurrentIndentInfo}}
+\index{GetCurrentIndentInfo@{GetCurrentIndentInfo}!PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}}
+\doxysubsubsection{\texorpdfstring{GetCurrentIndentInfo()}{GetCurrentIndentInfo()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Core_1_1ArrayListTextBuffer_a4d062956a65ca267bed332952ee932b4} 
+string? Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer.\+Get\+Current\+Indent\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer_af5bf35e81c747f5f7011e839b8d799dd}{Py\+Bro.\+Contracts.\+IText\+Buffer}}.
+
+\Hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer_a538198ec60af45a385a76d057cbb50b9}\index{PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}!GetHashCode@{GetHashCode}}
+\index{GetHashCode@{GetHashCode}!PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}}
+\doxysubsubsection{\texorpdfstring{GetHashCode()}{GetHashCode()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Core_1_1ArrayListTextBuffer_a538198ec60af45a385a76d057cbb50b9} 
+override int Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer.\+Get\+Hash\+Code (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer_a7658a103458f84b2098b22e604fe1b9f}\index{PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}!GetIndentString@{GetIndentString}}
+\index{GetIndentString@{GetIndentString}!PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}}
+\doxysubsubsection{\texorpdfstring{GetIndentString()}{GetIndentString()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Core_1_1ArrayListTextBuffer_a7658a103458f84b2098b22e604fe1b9f} 
+string Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer.\+Get\+Indent\+String (\begin{DoxyParamCaption}\item[{string}]{line}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer_a37a64100759c9a28c868bac172ef2e9e}\index{PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}!SetContent@{SetContent}}
+\index{SetContent@{SetContent}!PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}}
+\doxysubsubsection{\texorpdfstring{SetContent()}{SetContent()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Core_1_1ArrayListTextBuffer_a37a64100759c9a28c868bac172ef2e9e} 
+void Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer.\+Set\+Content (\begin{DoxyParamCaption}\item[{string}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Replaces the current buffer content with the provided text. The text is split into separate lines before being stored. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & The new text content of the buffer.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer_aa3366b6a5113d68bc5ac0e7af977a5dc}{Py\+Bro.\+Contracts.\+IText\+Buffer}}.
+
+\Hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer_aec9462f8b84506f1cb4f805703c8f863}\index{PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}!ShouldIncrementIndentation@{ShouldIncrementIndentation}}
+\index{ShouldIncrementIndentation@{ShouldIncrementIndentation}!PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}}
+\doxysubsubsection{\texorpdfstring{ShouldIncrementIndentation()}{ShouldIncrementIndentation()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Core_1_1ArrayListTextBuffer_aec9462f8b84506f1cb4f805703c8f863} 
+bool Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer.\+Should\+Increment\+Indentation (\begin{DoxyParamCaption}\item[{in string}]{line}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer_a14ab3db91cdf434903377d07f542ceb6}\index{PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}!uint@{uint}}
+\index{uint@{uint}!PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}}
+\doxysubsubsection{\texorpdfstring{uint}{uint}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Core_1_1ArrayListTextBuffer_a14ab3db91cdf434903377d07f542ceb6} 
+Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer.\+uint}
+
+
+
+Calculates the current indentation level and detects the indentation string used inside the buffer. 
+
+\begin{DoxyReturn}{Returns}
+A tuple containing the indentation level and the indentation string. 
+\end{DoxyReturn}
+
+
+\label{doc-property-members}
+\Hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{classPyBro_1_1Core_1_1ArrayListTextBuffer_a68a4261061422a2a2ef15c8ea1869556}\index{PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}!\_buffer@{\_buffer}}
+\index{\_buffer@{\_buffer}!PyBro.Core.ArrayListTextBuffer@{PyBro.Core.ArrayListTextBuffer}}
+\doxysubsubsection{\texorpdfstring{\_buffer}{\_buffer}}
+{\footnotesize\ttfamily \label{classPyBro_1_1Core_1_1ArrayListTextBuffer_a68a4261061422a2a2ef15c8ea1869556} 
+List$<$string$>$ Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer.\+\_\+buffer\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Py\+Bro.\+Core/\+\doxymbox{\hyperlink{ArrayListTextBuffer_8cs}{Array\+List\+Text\+Buffer.\+cs}}\end{DoxyCompactItemize}

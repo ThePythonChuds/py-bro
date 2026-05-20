@@ -1,0 +1,157 @@
+\doxysection{Py\+Bro.\+File\+Manager Class Reference}
+\hypertarget{classPyBro_1_1FileManager}{}\label{classPyBro_1_1FileManager}\index{PyBro.FileManager@{PyBro.FileManager}}
+
+
+Provides file management operations used by the application.  
+
+
+Inheritance diagram for Py\+Bro.\+File\+Manager:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPyBro_1_1FileManager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classPyBro_1_1FileManager_ad69a71d44f04cbfcd7c4a028b1a70403}{Create\+File}} (string path)
+\begin{DoxyCompactList}\small\item\em Creates an empty file at the specified path. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPyBro_1_1FileManager_a66231c07ab3da301a0004efbc5d98b8c}{Save\+Buffer}} (string path, string buffer)
+\begin{DoxyCompactList}\small\item\em Saves the provided text buffer to a file. If the file already exists, its previous content is overwritten. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPyBro_1_1FileManager_a32673983478605e890d4faefc78218a6}{Remove\+File}} (string path)
+\begin{DoxyCompactList}\small\item\em Removes the file located at the specified path. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{classPyBro_1_1FileManager_a839edc296cdb3326f896b4cc966706b2}{Get\+File\+Content}} (string path)
+\begin{DoxyCompactList}\small\item\em Reads the content of a file and returns it as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{classPyBro_1_1FileManager_aac60595f59f61b42ad90ba9c1ea4b2de}{Ensure\+Directory\+Exists}} (string dir\+Path)
+\item 
+static string \doxymbox{\hyperlink{classPyBro_1_1FileManager_abed3b8ad774fc2ce9ffa47e5cbaf1296}{Get\+Directory\+Name}} (string path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides file management operations used by the application. 
+
+\label{doc-func-members}
+\Hypertarget{classPyBro_1_1FileManager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPyBro_1_1FileManager_ad69a71d44f04cbfcd7c4a028b1a70403}\index{PyBro.FileManager@{PyBro.FileManager}!CreateFile@{CreateFile}}
+\index{CreateFile@{CreateFile}!PyBro.FileManager@{PyBro.FileManager}}
+\doxysubsubsection{\texorpdfstring{CreateFile()}{CreateFile()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1FileManager_ad69a71d44f04cbfcd7c4a028b1a70403} 
+void Py\+Bro.\+File\+Manager.\+Create\+File (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates an empty file at the specified path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path where the file should be created.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classPyBro_1_1FileException}{File\+Exception}} & Thrown when the file cannot be created. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IFileManager_abfb887c841ad21a7298a02c97abff893}{Py\+Bro.\+Contracts.\+IFile\+Manager}}.
+
+\Hypertarget{classPyBro_1_1FileManager_aac60595f59f61b42ad90ba9c1ea4b2de}\index{PyBro.FileManager@{PyBro.FileManager}!EnsureDirectoryExists@{EnsureDirectoryExists}}
+\index{EnsureDirectoryExists@{EnsureDirectoryExists}!PyBro.FileManager@{PyBro.FileManager}}
+\doxysubsubsection{\texorpdfstring{EnsureDirectoryExists()}{EnsureDirectoryExists()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1FileManager_aac60595f59f61b42ad90ba9c1ea4b2de} 
+void Py\+Bro.\+File\+Manager.\+Ensure\+Directory\+Exists (\begin{DoxyParamCaption}\item[{string}]{dir\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{classPyBro_1_1FileManager_abed3b8ad774fc2ce9ffa47e5cbaf1296}\index{PyBro.FileManager@{PyBro.FileManager}!GetDirectoryName@{GetDirectoryName}}
+\index{GetDirectoryName@{GetDirectoryName}!PyBro.FileManager@{PyBro.FileManager}}
+\doxysubsubsection{\texorpdfstring{GetDirectoryName()}{GetDirectoryName()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1FileManager_abed3b8ad774fc2ce9ffa47e5cbaf1296} 
+string Py\+Bro.\+File\+Manager.\+Get\+Directory\+Name (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{classPyBro_1_1FileManager_a839edc296cdb3326f896b4cc966706b2}\index{PyBro.FileManager@{PyBro.FileManager}!GetFileContent@{GetFileContent}}
+\index{GetFileContent@{GetFileContent}!PyBro.FileManager@{PyBro.FileManager}}
+\doxysubsubsection{\texorpdfstring{GetFileContent()}{GetFileContent()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1FileManager_a839edc296cdb3326f896b4cc966706b2} 
+string Py\+Bro.\+File\+Manager.\+Get\+File\+Content (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads the content of a file and returns it as a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path of the file that should be read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The complete text content of the file.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classPyBro_1_1FileException}{File\+Exception}} & Thrown when the file cannot be read. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IFileManager_ad95e899d5c36e69c79b63601ed62ebdd}{Py\+Bro.\+Contracts.\+IFile\+Manager}}.
+
+\Hypertarget{classPyBro_1_1FileManager_a32673983478605e890d4faefc78218a6}\index{PyBro.FileManager@{PyBro.FileManager}!RemoveFile@{RemoveFile}}
+\index{RemoveFile@{RemoveFile}!PyBro.FileManager@{PyBro.FileManager}}
+\doxysubsubsection{\texorpdfstring{RemoveFile()}{RemoveFile()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1FileManager_a32673983478605e890d4faefc78218a6} 
+void Py\+Bro.\+File\+Manager.\+Remove\+File (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes the file located at the specified path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path of the file that should be removed.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classPyBro_1_1FileException}{File\+Exception}} & Thrown when the specified file does not exist. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IFileManager_a7dab36f2ec049fafa5fc31c9b468cfca}{Py\+Bro.\+Contracts.\+IFile\+Manager}}.
+
+\Hypertarget{classPyBro_1_1FileManager_a66231c07ab3da301a0004efbc5d98b8c}\index{PyBro.FileManager@{PyBro.FileManager}!SaveBuffer@{SaveBuffer}}
+\index{SaveBuffer@{SaveBuffer}!PyBro.FileManager@{PyBro.FileManager}}
+\doxysubsubsection{\texorpdfstring{SaveBuffer()}{SaveBuffer()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1FileManager_a66231c07ab3da301a0004efbc5d98b8c} 
+void Py\+Bro.\+File\+Manager.\+Save\+Buffer (\begin{DoxyParamCaption}\item[{string}]{path}{, }\item[{string}]{buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Saves the provided text buffer to a file. If the file already exists, its previous content is overwritten. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path of the file where the buffer should be saved.\\
+\hline
+{\em buffer} & The text content that should be written to the file.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classPyBro_1_1FileException}{File\+Exception}} & Thrown when the file cannot be written. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IFileManager_a9076aa8974c2269e6dba650608e135c7}{Py\+Bro.\+Contracts.\+IFile\+Manager}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Py\+Bro.\+Core/\+\doxymbox{\hyperlink{FileManager_8cs}{File\+Manager.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,28 @@
+var classPyBro_1_1Tests_1_1FileManagerTests =
+[
+    [ "FileManagerTests", "classPyBro_1_1Tests_1_1FileManagerTests.html#ab127f5512ff497e43e367a6f0e63d6e4", null ],
+    [ "CreateFile_CalledTwice_DoesNotThrow", "classPyBro_1_1Tests_1_1FileManagerTests.html#a634f4ca6f5ad0d5c6fdc5caa1ac88a79", null ],
+    [ "CreateFile_CreatesFileOnDisk", "classPyBro_1_1Tests_1_1FileManagerTests.html#a1edcf8cd164c8139ffc54a0e485af0c4", null ],
+    [ "CreateFile_EmptyFile_HasNoContent", "classPyBro_1_1Tests_1_1FileManagerTests.html#a364d00295e8f50ad58a4398b3636aa36", null ],
+    [ "CreateFile_InvalidPath_ThrowsFileException", "classPyBro_1_1Tests_1_1FileManagerTests.html#af06f77c264c1e2ce669ddb26179ca601", null ],
+    [ "CreateFile_ThenRemoveFile_FileNoLongerExists", "classPyBro_1_1Tests_1_1FileManagerTests.html#a84837135b8465a1ead074a1564d5b0bc", null ],
+    [ "GetFileContent_AfterSaveBuffer_ReturnsUpdatedContent", "classPyBro_1_1Tests_1_1FileManagerTests.html#a51bde419e23f6df68d2736ef81af1046", null ],
+    [ "GetFileContent_EmptyFile_ReturnsEmptyString", "classPyBro_1_1Tests_1_1FileManagerTests.html#aa4f850e25dab01ef77c9a9451bf02926", null ],
+    [ "GetFileContent_MultilineFile_ReturnsAll", "classPyBro_1_1Tests_1_1FileManagerTests.html#a6dc6eaaa9a2c2df7380e9d18caaf51e5", null ],
+    [ "GetFileContent_NonexistentFile_ThrowsFileException", "classPyBro_1_1Tests_1_1FileManagerTests.html#aa744fd9dc75816fbcb7e263bb7800c7b", null ],
+    [ "GetFileContent_ReturnsCorrectContent", "classPyBro_1_1Tests_1_1FileManagerTests.html#a00170cc716ffe443dd49806486b46bf6", null ],
+    [ "RemoveFile_DeletesFile", "classPyBro_1_1Tests_1_1FileManagerTests.html#a594fe28696371f29646c4869d2d02afa", null ],
+    [ "RemoveFile_NonexistentFile_ThrowsFileException", "classPyBro_1_1Tests_1_1FileManagerTests.html#a73f42ea64627f6a563f0b75c8e69ed8d", null ],
+    [ "SaveBuffer_CreatesDirectoryIfNotExists", "classPyBro_1_1Tests_1_1FileManagerTests.html#a00739e98c9979a5e4498a58b62b9d129", null ],
+    [ "SaveBuffer_CreatesFileIfNotExists", "classPyBro_1_1Tests_1_1FileManagerTests.html#afc468ca62c8c1ef48640a6e9936f8397", null ],
+    [ "SaveBuffer_EmptyContent_WritesEmptyFile", "classPyBro_1_1Tests_1_1FileManagerTests.html#af97f1c549e620c45fe1052132ebe252a", null ],
+    [ "SaveBuffer_LargeContent_SavedCorrectly", "classPyBro_1_1Tests_1_1FileManagerTests.html#addbaeafda97b3ea629c4b1969e1d43d8", null ],
+    [ "SaveBuffer_MultilineContent_SavedCorrectly", "classPyBro_1_1Tests_1_1FileManagerTests.html#abbf192d83d1d50b439414a06eaa7081f", null ],
+    [ "SaveBuffer_OverwritesExistingContent", "classPyBro_1_1Tests_1_1FileManagerTests.html#a8aa2fc4e61a5f94b89929a72b97fd09f", null ],
+    [ "SaveBuffer_SpecialCharacters_SavedCorrectly", "classPyBro_1_1Tests_1_1FileManagerTests.html#a959062c9d4da940d75d77867e9dba121", null ],
+    [ "SaveBuffer_ThenGetFileContent_ReturnsSameContent", "classPyBro_1_1Tests_1_1FileManagerTests.html#a23e0e67d6a4960d1903f7f1f5f82cc5a", null ],
+    [ "SaveBuffer_WritesContentToFile", "classPyBro_1_1Tests_1_1FileManagerTests.html#a423d6b207185ba4bf920e282ab54b345", null ],
+    [ "TempFile", "classPyBro_1_1Tests_1_1FileManagerTests.html#a34f024ffc8212d9ae59b80e6475e7c8d", null ],
+    [ "_fm", "classPyBro_1_1Tests_1_1FileManagerTests.html#a12e745eb9f3aa7eb3ef2b55a369b442d", null ],
+    [ "_testDir", "classPyBro_1_1Tests_1_1FileManagerTests.html#ad70de8c27296a76ff9ef4c72bee78e86", null ]
+];

@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['_5fbuffer_0',['_buffer',['../classPyBro_1_1Core_1_1ArrayListTextBuffer.html#a68a4261061422a2a2ef15c8ea1869556',1,'PyBro::Core::ArrayListTextBuffer']]],
+  ['_5fbuffercontent_1',['_bufferContent',['../classPyBro_1_1Commands_1_1ViewCommandRewriteActiveBuffer.html#ad126b5941c58ba0339b01859b9430b6f',1,'PyBro::Commands::ViewCommandRewriteActiveBuffer']]],
+  ['_5fcontent_2',['_content',['../classPyBro_1_1Commands_1_1ModelCommandRewriteBuffer.html#a8fc7b38f5a714f6398c4cad0fc55a253',1,'PyBro::Commands::ModelCommandRewriteBuffer']]],
+  ['_5ferrmsg_3',['_errMsg',['../classPyBro_1_1Commands_1_1ViewCommandDisplayPythonError.html#a1b309349e0bf4e4c346effe5b1944a5d',1,'PyBro::Commands::ViewCommandDisplayPythonError']]],
+  ['_5ffilemanager_4',['_fileManager',['../classPyBro_1_1MVC_1_1Model.html#acba525b65fb571295f5ff8d5d8e1755c',1,'PyBro::MVC::Model']]],
+  ['_5ffm_5',['_fm',['../classPyBro_1_1Tests_1_1FileManagerTests.html#a12e745eb9f3aa7eb3ef2b55a369b442d',1,'PyBro::Tests::FileManagerTests']]],
+  ['_5fmodel_6',['_model',['../classPyBro_1_1MVC_1_1Controller.html#aa8c3057d4fec8f97b12300b97e4b1c0e',1,'PyBro::MVC::Controller']]],
+  ['_5fmodeltoviewcommandqueue_7',['_modelToViewCommandQueue',['../classPyBro_1_1Contracts_1_1MessageQueues.html#ac538076524fcacd4326fca590e6c657e',1,'PyBro::Contracts::MessageQueues']]],
+  ['_5fnewtitle_8',['_newTitle',['../classPyBro_1_1Commands_1_1ViewCommandUpdateTitle.html#a4e85cc337db6c44f9e8a2374a56434c8',1,'PyBro::Commands::ViewCommandUpdateTitle']]],
+  ['_5fpath_9',['_path',['../classPyBro_1_1Commands_1_1ModelCommandLoadFile.html#a1a5a53e06b1e7a867ff7109f320b2373',1,'PyBro.Commands.ModelCommandLoadFile._path'],['../classPyBro_1_1Commands_1_1ModelCommandRewriteBuffer.html#a897437ef9ef9593740529cf5f2d7b05d',1,'PyBro.Commands.ModelCommandRewriteBuffer._path'],['../classPyBro_1_1Commands_1_1ModelCommandSaveBuffer.html#aeb08c9198bdf02c822e340774f4bab99',1,'PyBro.Commands.ModelCommandSaveBuffer._path']]],
+  ['_5fpythoninterpreter_10',['_pythonInterpreter',['../classPyBro_1_1MVC_1_1Model.html#ae3147dba974aaebee540bf1a7e464246',1,'PyBro::MVC::Model']]],
+  ['_5fscript_11',['_script',['../classPyBro_1_1Commands_1_1ModelCommandRunPythonScript.html#a62796af284cc71f5165291aaa99e1658',1,'PyBro.Commands.ModelCommandRunPythonScript._script'],['../classPyBro_1_1Commands_1_1ModelCommandSaveBuffer.html#a44d24926f3ee45bc8d032ce5a0c1ef60',1,'PyBro.Commands.ModelCommandSaveBuffer._script']]],
+  ['_5fscriptengine_12',['_scriptEngine',['../classPyBro_1_1PythonInterpreter.html#a0eaedcb5fe13aba1e6830ae1995df3f7',1,'PyBro::PythonInterpreter']]],
+  ['_5fscriptscope_13',['_scriptScope',['../classPyBro_1_1PythonInterpreter.html#ac6b45898824856056e09bdc15f75cf81',1,'PyBro::PythonInterpreter']]],
+  ['_5fstderr_14',['_stdErr',['../classPyBro_1_1Commands_1_1ViewCommandSendOutputToConsole.html#aea5f418fc419448d192ea12632c51f91',1,'PyBro::Commands::ViewCommandSendOutputToConsole']]],
+  ['_5fstdout_15',['_stdout',['../classPyBro_1_1Commands_1_1ViewCommandSendOutputToConsole.html#a925a2a029ac25a592cc177a538894d1c',1,'PyBro::Commands::ViewCommandSendOutputToConsole']]],
+  ['_5ftestdir_16',['_testDir',['../classPyBro_1_1Tests_1_1FileManagerTests.html#ad70de8c27296a76ff9ef4c72bee78e86',1,'PyBro::Tests::FileManagerTests']]],
+  ['_5ftextbuffers_17',['_textBuffers',['../classPyBro_1_1MVC_1_1Model.html#addcfbda4eac18dfd95e497f151c4e0e2',1,'PyBro::MVC::Model']]],
+  ['_5ftreedir_18',['_treeDir',['../classPyBro_1_1MVC_1_1View.html#aa78b075af2b4eb2f6747a1d9c7e33733',1,'PyBro::MVC::View']]],
+  ['_5fui_19',['_ui',['../classPyBro_1_1MVC_1_1View.html#af4913fa5ecf47c6d01131bed5888bded',1,'PyBro::MVC::View']]],
+  ['_5fview_20',['_view',['../classPyBro_1_1MVC_1_1Controller.html#a9a6e1752d5dd379aca8f822fc1b859ff',1,'PyBro::MVC::Controller']]],
+  ['_5fviewtomodelcommandqueue_21',['_viewToModelCommandQueue',['../classPyBro_1_1Contracts_1_1MessageQueues.html#a132dd04d72b9a06c95bc6437383faa47',1,'PyBro::Contracts::MessageQueues']]],
+  ['_5fwindow_22',['_window',['../classPyBro_1_1UI_1_1UiAdapter.html#a631d2531f3dd47f4b739ea88a84ee9f3',1,'PyBro::UI::UiAdapter']]]
+];

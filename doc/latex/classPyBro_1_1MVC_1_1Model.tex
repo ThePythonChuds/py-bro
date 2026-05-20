@@ -1,0 +1,112 @@
+\doxysection{Py\+Bro.\+MVC.\+Model Class Reference}
+\hypertarget{classPyBro_1_1MVC_1_1Model}{}\label{classPyBro_1_1MVC_1_1Model}\index{PyBro.MVC.Model@{PyBro.MVC.Model}}
+Inheritance diagram for Py\+Bro.\+MVC.\+Model:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPyBro_1_1MVC_1_1Model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classPyBro_1_1MVC_1_1Model_a542501bcad08a253b22bcf88cbbfbc23}{Model}} (\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IPythonInterpreter}{IPython\+Interpreter}} pi, \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IFileManager}{IFile\+Manager}} fm)
+\item 
+void \doxymbox{\hyperlink{classPyBro_1_1MVC_1_1Model_af3d84bdb079d0f669b92c99bfe43adfd}{Add\+Text\+Buffer}} (string file\+Name, \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer}{IText\+Buffer}} text\+Buffer)
+\begin{DoxyCompactList}\small\item\em Adds a text buffer and associates it with a file name. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPyBro_1_1MVC_1_1Model_a7fa8b6f8cb78236d6280197286bc6c10}{Execute\+Commands}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classPyBro_1_1MVC_1_1Model_a2745a7cc955156e17990b124950d4200}{Execute\+Command}} (\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IModelCommand}{IModel\+Command}} cmd)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IPythonInterpreter}{IPython\+Interpreter}} \doxymbox{\hyperlink{classPyBro_1_1MVC_1_1Model_ae3147dba974aaebee540bf1a7e464246}{\+\_\+python\+Interpreter}}
+\item 
+readonly \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IFileManager}{IFile\+Manager}} \doxymbox{\hyperlink{classPyBro_1_1MVC_1_1Model_acba525b65fb571295f5ff8d5d8e1755c}{\+\_\+file\+Manager}}
+\item 
+readonly Dictionary$<$ string, \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer}{IText\+Buffer}} $>$ \doxymbox{\hyperlink{classPyBro_1_1MVC_1_1Model_addcfbda4eac18dfd95e497f151c4e0e2}{\+\_\+text\+Buffers}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classPyBro_1_1MVC_1_1Model_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPyBro_1_1MVC_1_1Model_a542501bcad08a253b22bcf88cbbfbc23}\index{PyBro.MVC.Model@{PyBro.MVC.Model}!Model@{Model}}
+\index{Model@{Model}!PyBro.MVC.Model@{PyBro.MVC.Model}}
+\doxysubsubsection{\texorpdfstring{Model()}{Model()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1MVC_1_1Model_a542501bcad08a253b22bcf88cbbfbc23} 
+Py\+Bro.\+MVC.\+Model.\+Model (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IPythonInterpreter}{IPython\+Interpreter}}}]{pi}{, }\item[{\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IFileManager}{IFile\+Manager}}}]{fm}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classPyBro_1_1MVC_1_1Model_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPyBro_1_1MVC_1_1Model_af3d84bdb079d0f669b92c99bfe43adfd}\index{PyBro.MVC.Model@{PyBro.MVC.Model}!AddTextBuffer@{AddTextBuffer}}
+\index{AddTextBuffer@{AddTextBuffer}!PyBro.MVC.Model@{PyBro.MVC.Model}}
+\doxysubsubsection{\texorpdfstring{AddTextBuffer()}{AddTextBuffer()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1MVC_1_1Model_af3d84bdb079d0f669b92c99bfe43adfd} 
+void Py\+Bro.\+MVC.\+Model.\+Add\+Text\+Buffer (\begin{DoxyParamCaption}\item[{string}]{file\+Name}{, }\item[{\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer}{IText\+Buffer}}}]{text\+Buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a text buffer and associates it with a file name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The name of the file associated with the text buffer.\\
+\hline
+{\em text\+Buffer} & The text buffer that stores the file content.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IModel_af5d380f7d175c81e56c09d23cb24e0fb}{Py\+Bro.\+Contracts.\+IModel}}.
+
+\Hypertarget{classPyBro_1_1MVC_1_1Model_a2745a7cc955156e17990b124950d4200}\index{PyBro.MVC.Model@{PyBro.MVC.Model}!ExecuteCommand@{ExecuteCommand}}
+\index{ExecuteCommand@{ExecuteCommand}!PyBro.MVC.Model@{PyBro.MVC.Model}}
+\doxysubsubsection{\texorpdfstring{ExecuteCommand()}{ExecuteCommand()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1MVC_1_1Model_a2745a7cc955156e17990b124950d4200} 
+void Py\+Bro.\+MVC.\+Model.\+Execute\+Command (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IModelCommand}{IModel\+Command}}}]{cmd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{classPyBro_1_1MVC_1_1Model_a7fa8b6f8cb78236d6280197286bc6c10}\index{PyBro.MVC.Model@{PyBro.MVC.Model}!ExecuteCommands@{ExecuteCommands}}
+\index{ExecuteCommands@{ExecuteCommands}!PyBro.MVC.Model@{PyBro.MVC.Model}}
+\doxysubsubsection{\texorpdfstring{ExecuteCommands()}{ExecuteCommands()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1MVC_1_1Model_a7fa8b6f8cb78236d6280197286bc6c10} 
+void Py\+Bro.\+MVC.\+Model.\+Execute\+Commands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ICommandMessageQueueListener_a2b0c334aeb7faa66c97dc405150a6fe7}{Py\+Bro.\+Contracts.\+ICommand\+Message\+Queue\+Listener}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classPyBro_1_1MVC_1_1Model_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPyBro_1_1MVC_1_1Model_acba525b65fb571295f5ff8d5d8e1755c}\index{PyBro.MVC.Model@{PyBro.MVC.Model}!\_fileManager@{\_fileManager}}
+\index{\_fileManager@{\_fileManager}!PyBro.MVC.Model@{PyBro.MVC.Model}}
+\doxysubsubsection{\texorpdfstring{\_fileManager}{\_fileManager}}
+{\footnotesize\ttfamily \label{classPyBro_1_1MVC_1_1Model_acba525b65fb571295f5ff8d5d8e1755c} 
+readonly \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IFileManager}{IFile\+Manager}} Py\+Bro.\+MVC.\+Model.\+\_\+file\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classPyBro_1_1MVC_1_1Model_ae3147dba974aaebee540bf1a7e464246}\index{PyBro.MVC.Model@{PyBro.MVC.Model}!\_pythonInterpreter@{\_pythonInterpreter}}
+\index{\_pythonInterpreter@{\_pythonInterpreter}!PyBro.MVC.Model@{PyBro.MVC.Model}}
+\doxysubsubsection{\texorpdfstring{\_pythonInterpreter}{\_pythonInterpreter}}
+{\footnotesize\ttfamily \label{classPyBro_1_1MVC_1_1Model_ae3147dba974aaebee540bf1a7e464246} 
+readonly \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IPythonInterpreter}{IPython\+Interpreter}} Py\+Bro.\+MVC.\+Model.\+\_\+python\+Interpreter\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classPyBro_1_1MVC_1_1Model_addcfbda4eac18dfd95e497f151c4e0e2}\index{PyBro.MVC.Model@{PyBro.MVC.Model}!\_textBuffers@{\_textBuffers}}
+\index{\_textBuffers@{\_textBuffers}!PyBro.MVC.Model@{PyBro.MVC.Model}}
+\doxysubsubsection{\texorpdfstring{\_textBuffers}{\_textBuffers}}
+{\footnotesize\ttfamily \label{classPyBro_1_1MVC_1_1Model_addcfbda4eac18dfd95e497f151c4e0e2} 
+readonly Dictionary$<$string, \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer}{IText\+Buffer}}$>$ Py\+Bro.\+MVC.\+Model.\+\_\+text\+Buffers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Py\+Bro.\+MVC/\+\doxymbox{\hyperlink{Model_8cs}{Model.\+cs}}\end{DoxyCompactItemize}

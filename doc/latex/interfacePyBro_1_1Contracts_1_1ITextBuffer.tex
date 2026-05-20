@@ -1,0 +1,141 @@
+\doxysection{Py\+Bro.\+Contracts.\+IText\+Buffer Interface Reference}
+\hypertarget{interfacePyBro_1_1Contracts_1_1ITextBuffer}{}\label{interfacePyBro_1_1Contracts_1_1ITextBuffer}\index{PyBro.Contracts.ITextBuffer@{PyBro.Contracts.ITextBuffer}}
+
+
+Defines the behavior required for a text buffer component.  
+
+
+Inheritance diagram for Py\+Bro.\+Contracts.\+IText\+Buffer:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfacePyBro_1_1Contracts_1_1ITextBuffer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer_af5bf35e81c747f5f7011e839b8d799dd}{Get\+Current\+Indent\+Info}} ()
+\item 
+void \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer_ad4a90a99fa757aed80219c3709719f74}{Autoindent}} ()
+\begin{DoxyCompactList}\small\item\em Automatically applies indentation to the current line based on the existing buffer content. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer_aeae041b04d1ca672a2fd64907cb9b9eb}{Add\+Line}} (string line)
+\begin{DoxyCompactList}\small\item\em Adds a new line to the text buffer. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer_aa3366b6a5113d68bc5ac0e7af977a5dc}{Set\+Content}} (string content)
+\begin{DoxyCompactList}\small\item\em Replaces the current buffer content with the provided text. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer_abe82174d1ed9bd4be9746d5ca2bde48e}{Get\+Content}} ()
+\begin{DoxyCompactList}\small\item\em Returns the entire content stored in the text buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITextBuffer_a94fbee70a884fdb75cc0082444d6aa5f}{UInt32}}
+\begin{DoxyCompactList}\small\item\em Returns information about the current indentation level and indentation string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the behavior required for a text buffer component. 
+
+\label{doc-func-members}
+\Hypertarget{interfacePyBro_1_1Contracts_1_1ITextBuffer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfacePyBro_1_1Contracts_1_1ITextBuffer_aeae041b04d1ca672a2fd64907cb9b9eb}\index{PyBro.Contracts.ITextBuffer@{PyBro.Contracts.ITextBuffer}!AddLine@{AddLine}}
+\index{AddLine@{AddLine}!PyBro.Contracts.ITextBuffer@{PyBro.Contracts.ITextBuffer}}
+\doxysubsubsection{\texorpdfstring{AddLine()}{AddLine()}}
+{\footnotesize\ttfamily \label{interfacePyBro_1_1Contracts_1_1ITextBuffer_aeae041b04d1ca672a2fd64907cb9b9eb} 
+void Py\+Bro.\+Contracts.\+IText\+Buffer.\+Add\+Line (\begin{DoxyParamCaption}\item[{string}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Adds a new line to the text buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & The line that should be added to the buffer.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_a873c86fed472aea557cbb3839fc29d28}{Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer}}.
+
+\Hypertarget{interfacePyBro_1_1Contracts_1_1ITextBuffer_ad4a90a99fa757aed80219c3709719f74}\index{PyBro.Contracts.ITextBuffer@{PyBro.Contracts.ITextBuffer}!Autoindent@{Autoindent}}
+\index{Autoindent@{Autoindent}!PyBro.Contracts.ITextBuffer@{PyBro.Contracts.ITextBuffer}}
+\doxysubsubsection{\texorpdfstring{Autoindent()}{Autoindent()}}
+{\footnotesize\ttfamily \label{interfacePyBro_1_1Contracts_1_1ITextBuffer_ad4a90a99fa757aed80219c3709719f74} 
+void Py\+Bro.\+Contracts.\+IText\+Buffer.\+Autoindent (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Automatically applies indentation to the current line based on the existing buffer content. 
+
+
+
+Implemented in \doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_a8e89d685cf684eda5d1ac0f5660ebc75}{Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer}}.
+
+\Hypertarget{interfacePyBro_1_1Contracts_1_1ITextBuffer_abe82174d1ed9bd4be9746d5ca2bde48e}\index{PyBro.Contracts.ITextBuffer@{PyBro.Contracts.ITextBuffer}!GetContent@{GetContent}}
+\index{GetContent@{GetContent}!PyBro.Contracts.ITextBuffer@{PyBro.Contracts.ITextBuffer}}
+\doxysubsubsection{\texorpdfstring{GetContent()}{GetContent()}}
+{\footnotesize\ttfamily \label{interfacePyBro_1_1Contracts_1_1ITextBuffer_abe82174d1ed9bd4be9746d5ca2bde48e} 
+string Py\+Bro.\+Contracts.\+IText\+Buffer.\+Get\+Content (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the entire content stored in the text buffer. 
+
+\begin{DoxyReturn}{Returns}
+The complete text content of the buffer.
+\end{DoxyReturn}
+
+
+Implemented in \doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_a026c038702810631e1f151ed0d53aa9c}{Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer}}.
+
+\Hypertarget{interfacePyBro_1_1Contracts_1_1ITextBuffer_af5bf35e81c747f5f7011e839b8d799dd}\index{PyBro.Contracts.ITextBuffer@{PyBro.Contracts.ITextBuffer}!GetCurrentIndentInfo@{GetCurrentIndentInfo}}
+\index{GetCurrentIndentInfo@{GetCurrentIndentInfo}!PyBro.Contracts.ITextBuffer@{PyBro.Contracts.ITextBuffer}}
+\doxysubsubsection{\texorpdfstring{GetCurrentIndentInfo()}{GetCurrentIndentInfo()}}
+{\footnotesize\ttfamily \label{interfacePyBro_1_1Contracts_1_1ITextBuffer_af5bf35e81c747f5f7011e839b8d799dd} 
+string Py\+Bro.\+Contracts.\+IText\+Buffer.\+Get\+Current\+Indent\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_a4d062956a65ca267bed332952ee932b4}{Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer}}.
+
+\Hypertarget{interfacePyBro_1_1Contracts_1_1ITextBuffer_aa3366b6a5113d68bc5ac0e7af977a5dc}\index{PyBro.Contracts.ITextBuffer@{PyBro.Contracts.ITextBuffer}!SetContent@{SetContent}}
+\index{SetContent@{SetContent}!PyBro.Contracts.ITextBuffer@{PyBro.Contracts.ITextBuffer}}
+\doxysubsubsection{\texorpdfstring{SetContent()}{SetContent()}}
+{\footnotesize\ttfamily \label{interfacePyBro_1_1Contracts_1_1ITextBuffer_aa3366b6a5113d68bc5ac0e7af977a5dc} 
+void Py\+Bro.\+Contracts.\+IText\+Buffer.\+Set\+Content (\begin{DoxyParamCaption}\item[{string}]{content}{}\end{DoxyParamCaption})}
+
+
+
+Replaces the current buffer content with the provided text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & The new text content of the buffer.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \doxymbox{\hyperlink{classPyBro_1_1Core_1_1ArrayListTextBuffer_a37a64100759c9a28c868bac172ef2e9e}{Py\+Bro.\+Core.\+Array\+List\+Text\+Buffer}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{interfacePyBro_1_1Contracts_1_1ITextBuffer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{interfacePyBro_1_1Contracts_1_1ITextBuffer_a94fbee70a884fdb75cc0082444d6aa5f}\index{PyBro.Contracts.ITextBuffer@{PyBro.Contracts.ITextBuffer}!UInt32@{UInt32}}
+\index{UInt32@{UInt32}!PyBro.Contracts.ITextBuffer@{PyBro.Contracts.ITextBuffer}}
+\doxysubsubsection{\texorpdfstring{UInt32}{UInt32}}
+{\footnotesize\ttfamily \label{interfacePyBro_1_1Contracts_1_1ITextBuffer_a94fbee70a884fdb75cc0082444d6aa5f} 
+Py\+Bro.\+Contracts.\+IText\+Buffer.\+UInt32}
+
+
+
+Returns information about the current indentation level and indentation string. 
+
+\begin{DoxyReturn}{Returns}
+A tuple containing the current indentation level and the indentation string. 
+\end{DoxyReturn}
+
+
+The documentation for this interface was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Pybro.\+Contracts/\+\doxymbox{\hyperlink{ITextBuffer_8cs}{IText\+Buffer.\+cs}}\end{DoxyCompactItemize}

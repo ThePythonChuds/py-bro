@@ -1,0 +1,185 @@
+\doxysection{Py\+Bro.\+UI.\+Main\+Window Class Reference}
+\hypertarget{classPyBro_1_1UI_1_1MainWindow}{}\label{classPyBro_1_1UI_1_1MainWindow}\index{PyBro.UI.MainWindow@{PyBro.UI.MainWindow}}
+Inheritance diagram for Py\+Bro.\+UI.\+Main\+Window:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPyBro_1_1UI_1_1MainWindow}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow_ade3683ee477ce95c84e360f3133b8f4b}{Main\+Window}} ()
+\item 
+string \doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow_a180264a70540895c7ec7719cc23ff7fa}{Get\+Text\+Buffer\+Content}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the entire current text content from the editor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string? \doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow_af8c71cf2e9ec9ad4c187a2a3583a692e}{Current\+File}} = null\hspace{0.3cm}{\ttfamily  \+[get, private set]\+}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow_a4e6ca0caf84f8fd5460eec4514001df7}{btn\+Run\+\_\+\+Click}} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Executes the Python code from the editor using the interpreter, displays the result in the console, and saves the current script. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow_a7433790e59cf0d36775a2d8d394544b0}{btn\+Load\+\_\+\+Click}} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Opens a dialog to select a local file and loads its content into the editor. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow_a5cd90a2b6d0a79dc2b05944d2e5dd13b}{btn\+Save\+\_\+\+Click}} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Saves the editor content to the current file or opens a save dialog if the file has not been saved previously. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow_ab9a51b829b7e5843729ad9e762abf1fb}{Window\+\_\+\+Mouse\+Left\+Button\+Down}} (object sender, Mouse\+Button\+Event\+Args e)
+\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow_a553ad78b86f9c89c1d322ed77379bbf9}{btn\+Close\+\_\+\+Click}} (object sender, Routed\+Event\+Args e)
+\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow_afb7a7cdb369033ba471f12fa577b4e68}{btn\+Minimize\+\_\+\+Click}} (object sender, Routed\+Event\+Args e)
+\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow_a87d8ee96e51ea408544c7bc08fcbc557}{Load\+Folder}} (string path)
+\begin{DoxyCompactList}\small\item\em Recursively builds the file tree starting from a root directory and sets it as the data source for the File Explorer. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow_a826d82f4f4ffed9f3ef7a0ae7c7de5e5}{file\+Explorer\+\_\+\+Selected\+Item\+Changed}} (object sender, Routed\+Property\+Changed\+Event\+Args$<$ object $>$ e)
+\begin{DoxyCompactList}\small\item\em Handles the selection of a new item in the file tree. If the item is a file, it loads its content into the editor. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow_a847a6413970695b5dd7000b30429a89e}{btn\+Select\+Folder\+\_\+\+Click}} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Opens a dialog to select a working directory and populates the file explorer. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow_a55d543b1e68f58323e44c14dc2f556cd}{btn\+Help\+\_\+\+Click}} (object sender, Routed\+Event\+Args e)
+\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow_a10d502a53663d3db09292c5f44434394}{txt\+Editor\+\_\+\+Text\+Changed}} (object sender, Text\+Changed\+Event\+Args e)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_ade3683ee477ce95c84e360f3133b8f4b}\index{PyBro.UI.MainWindow@{PyBro.UI.MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!PyBro.UI.MainWindow@{PyBro.UI.MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1MainWindow_ade3683ee477ce95c84e360f3133b8f4b} 
+Py\+Bro.\+UI.\+Main\+Window.\+Main\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_a553ad78b86f9c89c1d322ed77379bbf9}\index{PyBro.UI.MainWindow@{PyBro.UI.MainWindow}!btnClose\_Click@{btnClose\_Click}}
+\index{btnClose\_Click@{btnClose\_Click}!PyBro.UI.MainWindow@{PyBro.UI.MainWindow}}
+\doxysubsubsection{\texorpdfstring{btnClose\_Click()}{btnClose\_Click()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1MainWindow_a553ad78b86f9c89c1d322ed77379bbf9} 
+void Py\+Bro.\+UI.\+Main\+Window.\+btn\+Close\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender}{, }\item[{Routed\+Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_a55d543b1e68f58323e44c14dc2f556cd}\index{PyBro.UI.MainWindow@{PyBro.UI.MainWindow}!btnHelp\_Click@{btnHelp\_Click}}
+\index{btnHelp\_Click@{btnHelp\_Click}!PyBro.UI.MainWindow@{PyBro.UI.MainWindow}}
+\doxysubsubsection{\texorpdfstring{btnHelp\_Click()}{btnHelp\_Click()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1MainWindow_a55d543b1e68f58323e44c14dc2f556cd} 
+void Py\+Bro.\+UI.\+Main\+Window.\+btn\+Help\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender}{, }\item[{Routed\+Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_a7433790e59cf0d36775a2d8d394544b0}\index{PyBro.UI.MainWindow@{PyBro.UI.MainWindow}!btnLoad\_Click@{btnLoad\_Click}}
+\index{btnLoad\_Click@{btnLoad\_Click}!PyBro.UI.MainWindow@{PyBro.UI.MainWindow}}
+\doxysubsubsection{\texorpdfstring{btnLoad\_Click()}{btnLoad\_Click()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1MainWindow_a7433790e59cf0d36775a2d8d394544b0} 
+void Py\+Bro.\+UI.\+Main\+Window.\+btn\+Load\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender}{, }\item[{Routed\+Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Opens a dialog to select a local file and loads its content into the editor. 
+
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_afb7a7cdb369033ba471f12fa577b4e68}\index{PyBro.UI.MainWindow@{PyBro.UI.MainWindow}!btnMinimize\_Click@{btnMinimize\_Click}}
+\index{btnMinimize\_Click@{btnMinimize\_Click}!PyBro.UI.MainWindow@{PyBro.UI.MainWindow}}
+\doxysubsubsection{\texorpdfstring{btnMinimize\_Click()}{btnMinimize\_Click()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1MainWindow_afb7a7cdb369033ba471f12fa577b4e68} 
+void Py\+Bro.\+UI.\+Main\+Window.\+btn\+Minimize\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender}{, }\item[{Routed\+Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_a4e6ca0caf84f8fd5460eec4514001df7}\index{PyBro.UI.MainWindow@{PyBro.UI.MainWindow}!btnRun\_Click@{btnRun\_Click}}
+\index{btnRun\_Click@{btnRun\_Click}!PyBro.UI.MainWindow@{PyBro.UI.MainWindow}}
+\doxysubsubsection{\texorpdfstring{btnRun\_Click()}{btnRun\_Click()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1MainWindow_a4e6ca0caf84f8fd5460eec4514001df7} 
+void Py\+Bro.\+UI.\+Main\+Window.\+btn\+Run\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender}{, }\item[{Routed\+Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Executes the Python code from the editor using the interpreter, displays the result in the console, and saves the current script. 
+
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_a5cd90a2b6d0a79dc2b05944d2e5dd13b}\index{PyBro.UI.MainWindow@{PyBro.UI.MainWindow}!btnSave\_Click@{btnSave\_Click}}
+\index{btnSave\_Click@{btnSave\_Click}!PyBro.UI.MainWindow@{PyBro.UI.MainWindow}}
+\doxysubsubsection{\texorpdfstring{btnSave\_Click()}{btnSave\_Click()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1MainWindow_a5cd90a2b6d0a79dc2b05944d2e5dd13b} 
+void Py\+Bro.\+UI.\+Main\+Window.\+btn\+Save\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender}{, }\item[{Routed\+Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Saves the editor content to the current file or opens a save dialog if the file has not been saved previously. 
+
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_a847a6413970695b5dd7000b30429a89e}\index{PyBro.UI.MainWindow@{PyBro.UI.MainWindow}!btnSelectFolder\_Click@{btnSelectFolder\_Click}}
+\index{btnSelectFolder\_Click@{btnSelectFolder\_Click}!PyBro.UI.MainWindow@{PyBro.UI.MainWindow}}
+\doxysubsubsection{\texorpdfstring{btnSelectFolder\_Click()}{btnSelectFolder\_Click()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1MainWindow_a847a6413970695b5dd7000b30429a89e} 
+void Py\+Bro.\+UI.\+Main\+Window.\+btn\+Select\+Folder\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender}{, }\item[{Routed\+Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Opens a dialog to select a working directory and populates the file explorer. 
+
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_a826d82f4f4ffed9f3ef7a0ae7c7de5e5}\index{PyBro.UI.MainWindow@{PyBro.UI.MainWindow}!fileExplorer\_SelectedItemChanged@{fileExplorer\_SelectedItemChanged}}
+\index{fileExplorer\_SelectedItemChanged@{fileExplorer\_SelectedItemChanged}!PyBro.UI.MainWindow@{PyBro.UI.MainWindow}}
+\doxysubsubsection{\texorpdfstring{fileExplorer\_SelectedItemChanged()}{fileExplorer\_SelectedItemChanged()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1MainWindow_a826d82f4f4ffed9f3ef7a0ae7c7de5e5} 
+void Py\+Bro.\+UI.\+Main\+Window.\+file\+Explorer\+\_\+\+Selected\+Item\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender}{, }\item[{Routed\+Property\+Changed\+Event\+Args$<$ object $>$}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Handles the selection of a new item in the file tree. If the item is a file, it loads its content into the editor. 
+
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_a180264a70540895c7ec7719cc23ff7fa}\index{PyBro.UI.MainWindow@{PyBro.UI.MainWindow}!GetTextBufferContent@{GetTextBufferContent}}
+\index{GetTextBufferContent@{GetTextBufferContent}!PyBro.UI.MainWindow@{PyBro.UI.MainWindow}}
+\doxysubsubsection{\texorpdfstring{GetTextBufferContent()}{GetTextBufferContent()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1MainWindow_a180264a70540895c7ec7719cc23ff7fa} 
+string Py\+Bro.\+UI.\+Main\+Window.\+Get\+Text\+Buffer\+Content (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the entire current text content from the editor. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the source code in the editor.
+\end{DoxyReturn}
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_a87d8ee96e51ea408544c7bc08fcbc557}\index{PyBro.UI.MainWindow@{PyBro.UI.MainWindow}!LoadFolder@{LoadFolder}}
+\index{LoadFolder@{LoadFolder}!PyBro.UI.MainWindow@{PyBro.UI.MainWindow}}
+\doxysubsubsection{\texorpdfstring{LoadFolder()}{LoadFolder()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1MainWindow_a87d8ee96e51ea408544c7bc08fcbc557} 
+void Py\+Bro.\+UI.\+Main\+Window.\+Load\+Folder (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Recursively builds the file tree starting from a root directory and sets it as the data source for the File Explorer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The absolute path to the selected folder.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_a10d502a53663d3db09292c5f44434394}\index{PyBro.UI.MainWindow@{PyBro.UI.MainWindow}!txtEditor\_TextChanged@{txtEditor\_TextChanged}}
+\index{txtEditor\_TextChanged@{txtEditor\_TextChanged}!PyBro.UI.MainWindow@{PyBro.UI.MainWindow}}
+\doxysubsubsection{\texorpdfstring{txtEditor\_TextChanged()}{txtEditor\_TextChanged()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1MainWindow_a10d502a53663d3db09292c5f44434394} 
+void Py\+Bro.\+UI.\+Main\+Window.\+txt\+Editor\+\_\+\+Text\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender}{, }\item[{Text\+Changed\+Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_ab9a51b829b7e5843729ad9e762abf1fb}\index{PyBro.UI.MainWindow@{PyBro.UI.MainWindow}!Window\_MouseLeftButtonDown@{Window\_MouseLeftButtonDown}}
+\index{Window\_MouseLeftButtonDown@{Window\_MouseLeftButtonDown}!PyBro.UI.MainWindow@{PyBro.UI.MainWindow}}
+\doxysubsubsection{\texorpdfstring{Window\_MouseLeftButtonDown()}{Window\_MouseLeftButtonDown()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1MainWindow_ab9a51b829b7e5843729ad9e762abf1fb} 
+void Py\+Bro.\+UI.\+Main\+Window.\+Window\+\_\+\+Mouse\+Left\+Button\+Down (\begin{DoxyParamCaption}\item[{object}]{sender}{, }\item[{Mouse\+Button\+Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\label{doc-property-members}
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{classPyBro_1_1UI_1_1MainWindow_af8c71cf2e9ec9ad4c187a2a3583a692e}\index{PyBro.UI.MainWindow@{PyBro.UI.MainWindow}!CurrentFile@{CurrentFile}}
+\index{CurrentFile@{CurrentFile}!PyBro.UI.MainWindow@{PyBro.UI.MainWindow}}
+\doxysubsubsection{\texorpdfstring{CurrentFile}{CurrentFile}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1MainWindow_af8c71cf2e9ec9ad4c187a2a3583a692e} 
+string? Py\+Bro.\+UI.\+Main\+Window.\+Current\+File = null\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Py\+Bro.\+Ui/\+\doxymbox{\hyperlink{MainWindow_8xaml_8cs}{Main\+Window.\+xaml.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,85 @@
+\doxysection{Py\+Bro.\+Tree\+Dir Class Reference}
+\hypertarget{classPyBro_1_1TreeDir}{}\label{classPyBro_1_1TreeDir}\index{PyBro.TreeDir@{PyBro.TreeDir}}
+
+
+Provides functionality for building and refreshing the application\textquotesingle{}s directory tree.  
+
+
+Inheritance diagram for Py\+Bro.\+Tree\+Dir:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPyBro_1_1TreeDir}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classPyBro_1_1TreeDir_aecfe56b5862d029deeae51339492ba0d}{Tree\+Dir}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new directory tree component. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPyBro_1_1TreeDir_a23cad03efa26563d02cb39356532440f}{Refresh}} ()
+\begin{DoxyCompactList}\small\item\em Refreshes the directory tree structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ \doxymbox{\hyperlink{classPyBro_1_1FileItem}{File\+Item}} $>$ \doxymbox{\hyperlink{classPyBro_1_1TreeDir_a0e2b83ba3f75cee8134abec05d66d436}{Build\+File\+Tree}} (string directory\+Path)
+\begin{DoxyCompactList}\small\item\em Builds a file tree from the specified directory path. Only Python files and directories are included in the result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functionality for building and refreshing the application\textquotesingle{}s directory tree. 
+
+\label{doc-constructors}
+\Hypertarget{classPyBro_1_1TreeDir_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPyBro_1_1TreeDir_aecfe56b5862d029deeae51339492ba0d}\index{PyBro.TreeDir@{PyBro.TreeDir}!TreeDir@{TreeDir}}
+\index{TreeDir@{TreeDir}!PyBro.TreeDir@{PyBro.TreeDir}}
+\doxysubsubsection{\texorpdfstring{TreeDir()}{TreeDir()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1TreeDir_aecfe56b5862d029deeae51339492ba0d} 
+Py\+Bro.\+Tree\+Dir.\+Tree\+Dir (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new directory tree component. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{classPyBro_1_1TreeDir_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPyBro_1_1TreeDir_a0e2b83ba3f75cee8134abec05d66d436}\index{PyBro.TreeDir@{PyBro.TreeDir}!BuildFileTree@{BuildFileTree}}
+\index{BuildFileTree@{BuildFileTree}!PyBro.TreeDir@{PyBro.TreeDir}}
+\doxysubsubsection{\texorpdfstring{BuildFileTree()}{BuildFileTree()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1TreeDir_a0e2b83ba3f75cee8134abec05d66d436} 
+List$<$ \doxymbox{\hyperlink{classPyBro_1_1FileItem}{File\+Item}} $>$ Py\+Bro.\+Tree\+Dir.\+Build\+File\+Tree (\begin{DoxyParamCaption}\item[{string}]{directory\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Builds a file tree from the specified directory path. Only Python files and directories are included in the result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em directory\+Path} & The root directory path used to build the file tree.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of file items representing the directory structure.
+\end{DoxyReturn}
+\Hypertarget{classPyBro_1_1TreeDir_a23cad03efa26563d02cb39356532440f}\index{PyBro.TreeDir@{PyBro.TreeDir}!Refresh@{Refresh}}
+\index{Refresh@{Refresh}!PyBro.TreeDir@{PyBro.TreeDir}}
+\doxysubsubsection{\texorpdfstring{Refresh()}{Refresh()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1TreeDir_a23cad03efa26563d02cb39356532440f} 
+void Py\+Bro.\+Tree\+Dir.\+Refresh (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Refreshes the directory tree structure. 
+
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1ITreeDir_aa0f440ee2e4712f253f961e6efb3e25d}{Py\+Bro.\+Contracts.\+ITree\+Dir}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Py\+Bro.\+Ui/\+\doxymbox{\hyperlink{TreeDir_8cs}{Tree\+Dir.\+cs}}\end{DoxyCompactItemize}

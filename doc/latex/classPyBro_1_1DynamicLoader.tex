@@ -1,0 +1,55 @@
+\doxysection{Py\+Bro.\+Dynamic\+Loader Class Reference}
+\hypertarget{classPyBro_1_1DynamicLoader}{}\label{classPyBro_1_1DynamicLoader}\index{PyBro.DynamicLoader@{PyBro.DynamicLoader}}
+
+
+Provides functionality for dynamically loading objects from external DLL files.  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static T \doxymbox{\hyperlink{classPyBro_1_1DynamicLoader_a40993e2c3e188ec40c67bf1b302e273b}{Load$<$ T $>$}} (string dll\+Path, string class\+Name)
+\begin{DoxyCompactList}\small\item\em Loads an object from a DLL and casts it to the requested interface type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functionality for dynamically loading objects from external DLL files. 
+
+\label{doc-func-members}
+\Hypertarget{classPyBro_1_1DynamicLoader_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPyBro_1_1DynamicLoader_a40993e2c3e188ec40c67bf1b302e273b}\index{PyBro.DynamicLoader@{PyBro.DynamicLoader}!Load$<$ T $>$@{Load$<$ T $>$}}
+\index{Load$<$ T $>$@{Load$<$ T $>$}!PyBro.DynamicLoader@{PyBro.DynamicLoader}}
+\doxysubsubsection{\texorpdfstring{Load$<$ T $>$()}{Load< T >()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1DynamicLoader_a40993e2c3e188ec40c67bf1b302e273b} 
+T Py\+Bro.\+Dynamic\+Loader.\+Load$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{dll\+Path}{, }\item[{string}]{class\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Loads an object from a DLL and casts it to the requested interface type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The interface type expected from the loaded object.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em dll\+Path} & The path to the DLL file.\\
+\hline
+{\em class\+Name} & The full name of the class that should be created.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of the requested class, cast to the specified interface.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Operation\+Exception} & Thrown when the DLL, class, or object instance cannot be loaded correctly. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Py\+Bro.\+Core/\+\doxymbox{\hyperlink{DynamicLoader_8cs}{Dynamic\+Loader.\+cs}}\end{DoxyCompactItemize}

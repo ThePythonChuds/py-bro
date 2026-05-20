@@ -1,0 +1,109 @@
+\doxysection{Py\+Bro.\+UI.\+Ui\+Adapter(Main\+Window window) Class Reference}
+\hypertarget{classPyBro_1_1UI_1_1UiAdapter}{}\label{classPyBro_1_1UI_1_1UiAdapter}\index{PyBro.UI.UiAdapter@{PyBro.UI.UiAdapter}}
+Inheritance diagram for Py\+Bro.\+UI.\+Ui\+Adapter:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPyBro_1_1UI_1_1UiAdapter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{classPyBro_1_1UI_1_1UiAdapter_a31090e956a7abd1a1b8f88a9d3ea81a6}{Get\+Text\+Buffer\+Content}} ()
+\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1UiAdapter_a6f94c9366157ad82810c37ba5306f058}{Update\+Buffer}} (string buffer\+Content)
+\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1UiAdapter_aace6a8bd9ceb2530ca9264dd25857f40}{Send\+Command\+To\+Model}} (\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IModelCommand}{IModel\+Command}} cmd)
+\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1UiAdapter_a416280f4f440361bf186623a26e327d4}{Display\+Output}} (string stdout, string stderr)
+\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1UiAdapter_a0af13e777db042bf61639cd0560352be}{Display\+Error}} (string error\+Message)
+\item 
+void \doxymbox{\hyperlink{classPyBro_1_1UI_1_1UiAdapter_a8863cec3bb60c5bac2ec35bb84fd0bd9}{Update\+Title}} (string new\+Title)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly \doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow}{Main\+Window}} \doxymbox{\hyperlink{classPyBro_1_1UI_1_1UiAdapter_a631d2531f3dd47f4b739ea88a84ee9f3}{\+\_\+window}} = window
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classPyBro_1_1UI_1_1UiAdapter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPyBro_1_1UI_1_1UiAdapter_a0af13e777db042bf61639cd0560352be}\index{PyBro.UI.UiAdapter@{PyBro.UI.UiAdapter}!DisplayError@{DisplayError}}
+\index{DisplayError@{DisplayError}!PyBro.UI.UiAdapter@{PyBro.UI.UiAdapter}}
+\doxysubsubsection{\texorpdfstring{DisplayError()}{DisplayError()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1UiAdapter_a0af13e777db042bf61639cd0560352be} 
+void Py\+Bro.\+UI.\+Ui\+Adapter.\+Display\+Error (\begin{DoxyParamCaption}\item[{string}]{error\+Message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IUiAdapter_a34ff30bde0fe09857e62bf8b45de3104}{Py\+Bro.\+Contracts.\+IUi\+Adapter}}.
+
+\Hypertarget{classPyBro_1_1UI_1_1UiAdapter_a416280f4f440361bf186623a26e327d4}\index{PyBro.UI.UiAdapter@{PyBro.UI.UiAdapter}!DisplayOutput@{DisplayOutput}}
+\index{DisplayOutput@{DisplayOutput}!PyBro.UI.UiAdapter@{PyBro.UI.UiAdapter}}
+\doxysubsubsection{\texorpdfstring{DisplayOutput()}{DisplayOutput()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1UiAdapter_a416280f4f440361bf186623a26e327d4} 
+void Py\+Bro.\+UI.\+Ui\+Adapter.\+Display\+Output (\begin{DoxyParamCaption}\item[{string}]{stdout}{, }\item[{string}]{stderr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IUiAdapter_a9bef550cf2d869544533c6f73e9da5a8}{Py\+Bro.\+Contracts.\+IUi\+Adapter}}.
+
+\Hypertarget{classPyBro_1_1UI_1_1UiAdapter_a31090e956a7abd1a1b8f88a9d3ea81a6}\index{PyBro.UI.UiAdapter@{PyBro.UI.UiAdapter}!GetTextBufferContent@{GetTextBufferContent}}
+\index{GetTextBufferContent@{GetTextBufferContent}!PyBro.UI.UiAdapter@{PyBro.UI.UiAdapter}}
+\doxysubsubsection{\texorpdfstring{GetTextBufferContent()}{GetTextBufferContent()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1UiAdapter_a31090e956a7abd1a1b8f88a9d3ea81a6} 
+string Py\+Bro.\+UI.\+Ui\+Adapter.\+Get\+Text\+Buffer\+Content (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IUiAdapter_a51cfa1e9993e85fc16a02ca94e2e358d}{Py\+Bro.\+Contracts.\+IUi\+Adapter}}.
+
+\Hypertarget{classPyBro_1_1UI_1_1UiAdapter_aace6a8bd9ceb2530ca9264dd25857f40}\index{PyBro.UI.UiAdapter@{PyBro.UI.UiAdapter}!SendCommandToModel@{SendCommandToModel}}
+\index{SendCommandToModel@{SendCommandToModel}!PyBro.UI.UiAdapter@{PyBro.UI.UiAdapter}}
+\doxysubsubsection{\texorpdfstring{SendCommandToModel()}{SendCommandToModel()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1UiAdapter_aace6a8bd9ceb2530ca9264dd25857f40} 
+void Py\+Bro.\+UI.\+Ui\+Adapter.\+Send\+Command\+To\+Model (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IModelCommand}{IModel\+Command}}}]{cmd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IUiAdapter_abcd679c10a031b29a6ed1d8eb4f55135}{Py\+Bro.\+Contracts.\+IUi\+Adapter}}.
+
+\Hypertarget{classPyBro_1_1UI_1_1UiAdapter_a6f94c9366157ad82810c37ba5306f058}\index{PyBro.UI.UiAdapter@{PyBro.UI.UiAdapter}!UpdateBuffer@{UpdateBuffer}}
+\index{UpdateBuffer@{UpdateBuffer}!PyBro.UI.UiAdapter@{PyBro.UI.UiAdapter}}
+\doxysubsubsection{\texorpdfstring{UpdateBuffer()}{UpdateBuffer()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1UiAdapter_a6f94c9366157ad82810c37ba5306f058} 
+void Py\+Bro.\+UI.\+Ui\+Adapter.\+Update\+Buffer (\begin{DoxyParamCaption}\item[{string}]{buffer\+Content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IUiAdapter_ab8d2c2fb138dce88ec64adaff7e8195a}{Py\+Bro.\+Contracts.\+IUi\+Adapter}}.
+
+\Hypertarget{classPyBro_1_1UI_1_1UiAdapter_a8863cec3bb60c5bac2ec35bb84fd0bd9}\index{PyBro.UI.UiAdapter@{PyBro.UI.UiAdapter}!UpdateTitle@{UpdateTitle}}
+\index{UpdateTitle@{UpdateTitle}!PyBro.UI.UiAdapter@{PyBro.UI.UiAdapter}}
+\doxysubsubsection{\texorpdfstring{UpdateTitle()}{UpdateTitle()}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1UiAdapter_a8863cec3bb60c5bac2ec35bb84fd0bd9} 
+void Py\+Bro.\+UI.\+Ui\+Adapter.\+Update\+Title (\begin{DoxyParamCaption}\item[{string}]{new\+Title}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IUiAdapter_a104e0d64c1a6f3a544240f817ca93223}{Py\+Bro.\+Contracts.\+IUi\+Adapter}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classPyBro_1_1UI_1_1UiAdapter_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPyBro_1_1UI_1_1UiAdapter_a631d2531f3dd47f4b739ea88a84ee9f3}\index{PyBro.UI.UiAdapter@{PyBro.UI.UiAdapter}!\_window@{\_window}}
+\index{\_window@{\_window}!PyBro.UI.UiAdapter@{PyBro.UI.UiAdapter}}
+\doxysubsubsection{\texorpdfstring{\_window}{\_window}}
+{\footnotesize\ttfamily \label{classPyBro_1_1UI_1_1UiAdapter_a631d2531f3dd47f4b739ea88a84ee9f3} 
+readonly \doxymbox{\hyperlink{classPyBro_1_1UI_1_1MainWindow}{Main\+Window}} Py\+Bro.\+UI.\+Ui\+Adapter.\+\_\+window = window\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Py\+Bro.\+Ui/\+\doxymbox{\hyperlink{UiAdapter_8cs}{Ui\+Adapter.\+cs}}\end{DoxyCompactItemize}

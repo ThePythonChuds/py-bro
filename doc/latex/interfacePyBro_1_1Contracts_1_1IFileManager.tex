@@ -1,0 +1,120 @@
+\doxysection{Py\+Bro.\+Contracts.\+IFile\+Manager Interface Reference}
+\hypertarget{interfacePyBro_1_1Contracts_1_1IFileManager}{}\label{interfacePyBro_1_1Contracts_1_1IFileManager}\index{PyBro.Contracts.IFileManager@{PyBro.Contracts.IFileManager}}
+Inheritance diagram for Py\+Bro.\+Contracts.\+IFile\+Manager:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfacePyBro_1_1Contracts_1_1IFileManager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IFileManager_abfb887c841ad21a7298a02c97abff893}{Create\+File}} (string path)
+\begin{DoxyCompactList}\small\item\em Creates an empty file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IFileManager_a9076aa8974c2269e6dba650608e135c7}{Save\+Buffer}} (string path, string buffer)
+\begin{DoxyCompactList}\small\item\em This method creates the file if a file does not exist at that path, and tries to overwrite the buffer to the file if it exists already. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IFileManager_a7dab36f2ec049fafa5fc31c9b468cfca}{Remove\+File}} (string path)
+\begin{DoxyCompactList}\small\item\em Requests OS for removing a file. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{interfacePyBro_1_1Contracts_1_1IFileManager_ad95e899d5c36e69c79b63601ed62ebdd}{Get\+File\+Content}} (string path)
+\begin{DoxyCompactList}\small\item\em Loads file content into a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{interfacePyBro_1_1Contracts_1_1IFileManager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfacePyBro_1_1Contracts_1_1IFileManager_abfb887c841ad21a7298a02c97abff893}\index{PyBro.Contracts.IFileManager@{PyBro.Contracts.IFileManager}!CreateFile@{CreateFile}}
+\index{CreateFile@{CreateFile}!PyBro.Contracts.IFileManager@{PyBro.Contracts.IFileManager}}
+\doxysubsubsection{\texorpdfstring{CreateFile()}{CreateFile()}}
+{\footnotesize\ttfamily \label{interfacePyBro_1_1Contracts_1_1IFileManager_abfb887c841ad21a7298a02c97abff893} 
+void Py\+Bro.\+Contracts.\+IFile\+Manager.\+Create\+File (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Creates an empty file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path of the file to be created\\
+\hline
+\end{DoxyParams}
+Thrown when name is null. 
+
+Implemented in \doxymbox{\hyperlink{classPyBro_1_1FileManager_ad69a71d44f04cbfcd7c4a028b1a70403}{Py\+Bro.\+File\+Manager}}.
+
+\Hypertarget{interfacePyBro_1_1Contracts_1_1IFileManager_ad95e899d5c36e69c79b63601ed62ebdd}\index{PyBro.Contracts.IFileManager@{PyBro.Contracts.IFileManager}!GetFileContent@{GetFileContent}}
+\index{GetFileContent@{GetFileContent}!PyBro.Contracts.IFileManager@{PyBro.Contracts.IFileManager}}
+\doxysubsubsection{\texorpdfstring{GetFileContent()}{GetFileContent()}}
+{\footnotesize\ttfamily \label{interfacePyBro_1_1Contracts_1_1IFileManager_ad95e899d5c36e69c79b63601ed62ebdd} 
+string Py\+Bro.\+Contracts.\+IFile\+Manager.\+Get\+File\+Content (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Loads file content into a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path of the file to be read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The content of the file.
+\end{DoxyReturn}
+
+
+Implemented in \doxymbox{\hyperlink{classPyBro_1_1FileManager_a839edc296cdb3326f896b4cc966706b2}{Py\+Bro.\+File\+Manager}}.
+
+\Hypertarget{interfacePyBro_1_1Contracts_1_1IFileManager_a7dab36f2ec049fafa5fc31c9b468cfca}\index{PyBro.Contracts.IFileManager@{PyBro.Contracts.IFileManager}!RemoveFile@{RemoveFile}}
+\index{RemoveFile@{RemoveFile}!PyBro.Contracts.IFileManager@{PyBro.Contracts.IFileManager}}
+\doxysubsubsection{\texorpdfstring{RemoveFile()}{RemoveFile()}}
+{\footnotesize\ttfamily \label{interfacePyBro_1_1Contracts_1_1IFileManager_a7dab36f2ec049fafa5fc31c9b468cfca} 
+void Py\+Bro.\+Contracts.\+IFile\+Manager.\+Remove\+File (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Requests OS for removing a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path of the file to be removed\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classPyBro_1_1FileException}{File\+Exception}} & If the path does not point to a file.\\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \doxymbox{\hyperlink{classPyBro_1_1FileManager_a32673983478605e890d4faefc78218a6}{Py\+Bro.\+File\+Manager}}.
+
+\Hypertarget{interfacePyBro_1_1Contracts_1_1IFileManager_a9076aa8974c2269e6dba650608e135c7}\index{PyBro.Contracts.IFileManager@{PyBro.Contracts.IFileManager}!SaveBuffer@{SaveBuffer}}
+\index{SaveBuffer@{SaveBuffer}!PyBro.Contracts.IFileManager@{PyBro.Contracts.IFileManager}}
+\doxysubsubsection{\texorpdfstring{SaveBuffer()}{SaveBuffer()}}
+{\footnotesize\ttfamily \label{interfacePyBro_1_1Contracts_1_1IFileManager_a9076aa8974c2269e6dba650608e135c7} 
+void Py\+Bro.\+Contracts.\+IFile\+Manager.\+Save\+Buffer (\begin{DoxyParamCaption}\item[{string}]{path}{, }\item[{string}]{buffer}{}\end{DoxyParamCaption})}
+
+
+
+This method creates the file if a file does not exist at that path, and tries to overwrite the buffer to the file if it exists already. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path of the file to be created\\
+\hline
+{\em buffer} & Content of the file\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classPyBro_1_1FileException}{File\+Exception}} & If file creation failed.\\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \doxymbox{\hyperlink{classPyBro_1_1FileManager_a66231c07ab3da301a0004efbc5d98b8c}{Py\+Bro.\+File\+Manager}}.
+
+
+
+The documentation for this interface was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Pybro.\+Contracts/\+\doxymbox{\hyperlink{IFileManager_8cs}{IFile\+Manager.\+cs}}\end{DoxyCompactItemize}
