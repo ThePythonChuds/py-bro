@@ -27,6 +27,8 @@ namespace PyBro.UI
     public partial class MainWindow : Window
     {
         public string? CurrentFile { get; private set; } = null;
+        public string? CurrentFolderPath { get; private set; } = null;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -61,7 +63,7 @@ namespace PyBro.UI
         /// Executes the Python code from the editor using the interpreter, displays the result in the console, 
         /// and saves the current script.
         /// </summary>
-        private void btnRun_Click(object sender, RoutedEventArgs e)
+        private async void btnRun_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Python files (*.py)|*.py|All files (*.*)|*.*";
@@ -91,6 +93,7 @@ namespace PyBro.UI
                 {
                     path = saveFileDialog.FileName;
                     CurrentFile = saveFileDialog.FileName;
+                    CurrentFolderPath = System.IO.Path.GetDirectoryName(path);
                 }
             }
 
@@ -98,6 +101,11 @@ namespace PyBro.UI
             {
                 var sbc = new ModelCommandSaveBuffer(path, script);
                 MessageQueues.SendModelCommand(sbc);
+                if (CurrentFolderPath != null)
+                {
+                    await Task.Delay(150); 
+                    LoadFolder(CurrentFolderPath); 
+                }
             }
         }
 
@@ -139,7 +147,7 @@ namespace PyBro.UI
         /// Saves the editor content to the current file or opens a save dialog 
         /// if the file has not been saved previously.
         /// </summary>
-        private void btnSave_Click(object sender, RoutedEventArgs e)
+        private async void btnSave_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Python files (*.py)|*.py|All files (*.*)|*.*";
@@ -158,6 +166,7 @@ namespace PyBro.UI
                 {
                     path = saveFileDialog.FileName;
                     CurrentFile = saveFileDialog.FileName;
+                    CurrentFolderPath = System.IO.Path.GetDirectoryName(path);
                 }
                 else
                     return;
@@ -165,6 +174,11 @@ namespace PyBro.UI
 
             var modelCmd = new ModelCommandSaveBuffer(path, scriptToSave);
             MessageQueues.SendModelCommand(modelCmd);
+            if (CurrentFolderPath != null)
+            {
+                await Task.Delay(150);
+                LoadFolder(CurrentFolderPath);
+            }
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -216,6 +230,11 @@ namespace PyBro.UI
                 };
 
                 fileExplorer.ItemsSource = new List<FileItem> { rootFolder };
+                fileExplorer.UpdateLayout();
+                if (fileExplorer.ItemContainerGenerator.ContainerFromIndex(0) is TreeViewItem rootNode)
+                {
+                    rootNode.IsExpanded = true;
+                }
             }
         }
 
@@ -230,6 +249,7 @@ namespace PyBro.UI
             {
                 try
                 {
+                    CurrentFile = selectedItem.Path;
                     var modelCmd = new ModelCommandLoadFile(selectedItem.Path);
                     MessageQueues.SendModelCommand(modelCmd);
 
@@ -252,7 +272,7 @@ namespace PyBro.UI
             if (dialog.ShowDialog() == true)
             {
                 string selectedPath = dialog.FolderName;
-
+                CurrentFolderPath = selectedPath;
                 LoadFolder(selectedPath);
                 btnSelectFolder.Visibility = Visibility.Collapsed;
                 fileExplorer.Visibility = Visibility.Visible;
